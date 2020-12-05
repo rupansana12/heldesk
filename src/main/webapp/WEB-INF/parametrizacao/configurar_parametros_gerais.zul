@@ -1,0 +1,104 @@
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<window apply="" id ="win">
+
+		
+
+		<x:div class="row">
+		
+		
+					<x:center>
+						<x:div class="box-header">
+							
+								<x:i class="fa fa-university" />
+								<div zclass="col-md-12">
+								<x:h5>REGISTAR PARAMETROS GERAIS (Tipo de Clientes, Categoria de Serviços, Prioridade, Marcas, etc)</x:h5>
+								</div>
+								
+							
+						</x:div>
+						
+					</x:center>
+			
+			<x:div class="col-md-12">
+				<!-- Custom Tabs -->
+				<x:div class="nav-tabs-custom">
+					<x:ul class="nav nav-tabs">
+					
+						<x:li class="active" id="li_pais" width="20%" >
+							<x:a href="#tab_1" data-toggle="tab"
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_categoria_servico.zul"'>
+								Categoria de Serviços
+							</x:a>
+						</x:li>
+						<!-- tirar o 1 Para o evento funcionar -->
+						<x:li id="li_provincia">
+							<x:a href="#tab_2" data-toggle="tab"
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_tipo_equipamento.zul"'>
+								Tipos de Equipamentos
+							</x:a>
+						</x:li>
+						<x:li id="li_distrito">
+							<x:a href="#tab_3" data-toggle="tab"
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_marca.zul"'>
+								Marcas de Equipamentos
+							</x:a>
+						</x:li>
+						<x:li id="li_tipo_documento" >
+							<x:a href="#tab_4" data-toggle="tab" 
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_tipo_cliente.zul"'>
+								Tipo de Clientes
+							</x:a>
+						</x:li>
+						<!-- tirar o 2 Para o evento funcionar -->
+						<x:li id="li_tipo_carta">
+							<x:a href="#tab_5" data-toggle="tab" 
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_prioridade.zul"'>
+								Prioridade na Execução
+							</x:a>
+						</x:li>
+						<!-- <x:li id="li_categoria">
+							<x:a href="#tab_5" data-toggle="tab" 
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_categoria_membro.zul"'>
+								Categoria de Membro
+							</x:a>
+						</x:li>
+						<x:li id="li_empresa">
+							<x:a href="#tab_5" data-toggle="tab" 
+								zk:onClick='inc_configurar.src="/WEB-INF/parametrizacao/registar_empresa.zul"'>
+								Registar Empresa
+							</x:a>
+						</x:li> -->
+						
+						
+						<x:li class="pull-right">
+							<x:a href="#"
+								onClick="@command('registarCiclo')" class="text-muted">
+								<x:i class="fa fa-mail-reply-all"></x:i>
+							</x:a>
+						</x:li>
+					</x:ul>
+
+					<!-- /.tab-content -->
+				</x:div><!-- nav-tabs-custom -->
+			</x:div><!-- /.col -->
+
+
+
+
+
+
+		</x:div><!-- /.row -->
+
+
+							<x:div>
+												<include id="inc_configurar" src="/WEB-INF/parametrizacao/registar_categoria_servico.zul" /> 
+                          						<!-- <div id="div_configurar"  ></div> -->
+                          	</x:div>
+
+
+
+
+
+
+	</window>
+</zk>

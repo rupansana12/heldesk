@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="icon" type="image/x-icon" href="img/rh.ico"?>
+<?link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/ionicons.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/morris/morris.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/AdminLTE.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/zk.wcs" rel="stylesheet" type="text/css" ?>
+<?link href="css/inoLab.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/listbox.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/chosenBox.css" rel="stylesheet" type="te\xt/css" ?>
+
+<?link href="css/metro/style.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/metro/style-responsive.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/metro/style-default.css" rel="stylesheet" type="text/css" ?>
+<?meta name="viewport" content="width=device-width, initial-scale=1.0"?> 
+<?link href="css/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/holidays.css" rel="stylesheet" type="text/css" ?>
+<zk  xmlns:x="xhtml" xmlns:zk="zk">
+<style>
+
+.login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:80%;
+	min-height:70px;
+	position:relative;
+	background:url(img/5.Logo.jpg) no-repeat center;
+	box-shadow:7px 15px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:30px 10px 0px 10px;
+	background:rgba(98,147,141,.9);
+}
+
+</style>
+<window contentStyle="background-color:white" width="100%"  style="margin:-5px">
+
+	<div style="margin-bottom:15px">
+		<div class="login-wrap">
+			<x:div class="login-html">
+			
+			
+			</x:div>
+		</div>
+	</div>
+	<div class = "row">
+<div class = "col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offst-1 col-sm-offset-1 ">
+<include src = "/views/Pre-registo/recuperar_dados_acesso.zul" ></include>
+
+</div>
+</div>
+
+
+    
+      </window>
+</zk>

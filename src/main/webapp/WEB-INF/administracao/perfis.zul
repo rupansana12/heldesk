@@ -1,0 +1,245 @@
+<?page title="Supervisor" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:p="xhtml">
+	<window id="win" title="" border="none"
+		contentStyle="overflow:auto" width="100%" 
+		apply="uem.co.mz.helpdesk.administracao.PerfilController">
+		
+		
+		<p:div class="col-lg-12">
+                    <!-- <p:div class="ibox float-e-margins"> -->
+                        <div style="padding-top:13px; pargin-left:4px">
+                            <p:h4> Gerir Permissoes
+                            </p:h4>
+                            <p:hr  height="2px"></p:hr>
+                        </div>
+                        <p:div class="ibox-content">
+                            
+                            
+                            <p:div class="form-horizontal">
+                               <p:div class="form-group">
+                               
+                               <p:div class="col-lg-12">
+                                 <p:label >
+                                 Perfil: 
+								</p:label>
+                                <div >
+										<combobox id="cbxPerfil" readonly="true"
+									placeholder="Selecione o Perfil" width="100%"
+									
+									autocomplete="true">
+									<template name="model">
+										<comboitem
+											label="${each.designacao}" value="${each}">
+										</comboitem>
+									</template>
+								</combobox>
+								
+								<textbox id="txtDesignacao" zclass="form-control" visible="false"
+											width="100%" placeholder="Digite o perfil">
+										</textbox>
+								
+								</div>
+                                </p:div>
+                                
+                                </p:div>
+                              </p:div>
+                              
+                              
+                              
+                              		<p:div class="form-group">
+                              		 
+                              <hlayout  style="padding-buttom:2px">
+                              <div hflex="1" vflex="true">
+   								<listbox id="lbxPermissoes"   checkmark="true" multiple="true"   rows="8" >
+   									 <listhead>
+   									 <listheader label="" width="5%"></listheader>
+   									 <listheader label="" width=""></listheader>
+   									 </listhead>
+   									  	<template name="model">
+           									 <listitem>
+           									 <listcell  />
+                								<listcell label="${each.designacao}"/>
+                							</listitem>
+                						</template>
+   								</listbox>
+                              		 </div>
+                              		 <vbox spacing="20px" width="24px" >
+        								<p:a style="cursor:pointer; padding-left:25%" id="chooseAll"  ><p:span class="fa fa-arrow-circle-o-right"/></p:a>
+        								<p:a style="cursor:pointer; padding-left:25%" id="chooseBtn"  ><p:span class="glyphicon glyphicon-hand-right"/></p:a>
+        								<p:a style="cursor:pointer; padding-left:25%" id="removeBtn"  ><p:span class="glyphicon glyphicon-hand-left"/></p:a>
+       									<p:a style="cursor:pointer; padding-left:25%" id="removeAll" disabled="true" ><p:span class="fa fa-arrow-circle-o-left"/></p:a>
+    								</vbox>
+    								<div hflex="1" vflex="true" >
+    							<listbox id="lbxPermissoesPerfil" emptyMessage="Sem dados registados" checkmark="true" multiple="true"   rows="8">
+    								 <listhead>
+   									 <listheader label="" width="5%"></listheader>
+   									 <listheader label="" width=""></listheader>
+   									  <listheader id="lhrRemove" label="" width="10%" align="center" ></listheader>
+   									 </listhead>
+    								<template name="model">
+           									 <listitem>
+           									 <listcell/>
+                								<listcell label="${each.designacao}"/>
+                								<listcell ><image src="/img/apagar.gif" forward="onClick=onClickRemoverPermissoes(${each})" /></listcell>
+                							</listitem>
+                						</template>
+   								</listbox>
+   								</div>
+                              </hlayout>
+                              		 
+                              		
+                              		
+                              		
+                              		</p:div>
+
+				 <p:div class="form-group">
+					<div align="right">
+							<button label="Novo Perfil" id="btnNovoPerfil" zclass="btn btn-w-m btn-primary"
+								style="margin:0px" />
+							<!-- <button label="Gravar" id="btnGravar" zclass="btn btn-w-m btn-success"
+								style="margin:0px" /> -->
+							<button id="btnActualizar" visible="false" zclass="btn btn-w-m btn-warning"
+								label="Actualizar" style="margin:0px">
+							</button>
+							<button label="Cancelar" id="btnCancelar" zclass="btn btn-w-m btn-info"
+								style="margin:0px" />
+								
+						</div>
+				 </p:div>		 
+						 </p:div>
+			
+			<!-- /.col-lg-4 -->
+		</p:div>
+
+
+
+
+		<p:div class="col-md-12">
+			<!-- <p:hr height="1%"></p:hr>
+			<div zclass="box box-success">
+				<div zclass="box-header">
+					<p:h4 class="ibox-title" >
+					Lista de Disciplinas
+				</p:h4>
+				</div>
+				</div>  -->
+				<p:div class="box-body">
+				<listbox id="lbxPerfil" mold="paging" rows="10" checkmark="true"
+					pageSize="10" multiple="false">
+					<listhead>
+						<listheader width="30px"></listheader>
+						<listheader align="left" width="25%">Perfil</listheader>
+						<listheader align="left" width="">Lista de Permissoes</listheader>
+
+					</listhead>
+
+					<template name="model">
+						<listitem>
+							<listcell/>
+							<listcell>
+								<label
+									value="${each.designacao}">
+								</label>
+							</listcell>
+							<listcell>	
+								<label
+									value="${each.permissoes}">
+								</label>
+							</listcell>
+							
+							
+						</listitem>
+					</template>
+				</listbox>
+
+			</p:div>
+			<separator></separator>
+			<!-- /.col-lg-4 -->
+		</p:div>
+		
+		
+	</window>
+</zk>			
+
+
+
+
+
+
+<!-- <?page title="Registar Perfis" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<?component name="dualListBox" extends="div" class="mz.ciuem.sgea.comps.DualListbox"?>
+
+	<window apply="">
+		<div zclass="col-md-12">
+			<div zclass="box box-primary">
+				<div zclass="box-header">
+					<x:h3 class="box-title">
+						Perfis de Utilizadores
+					</x:h3>
+				</div>
+				<div>
+					<div zclass="box-body">
+						<div class="form-group">
+							<x:label>Perfil</x:label>
+							<textbox zclass="form-control"
+								placeholder="descricao do perfil"
+								constraint="no empty : Não pode ser vazio nem conter apenas espaços em branco!"
+								id="txb_perfil" />
+						</div>
+						<div class="form-group">
+							<x:label>Permissões</x:label>
+							 <dualListBox id="dual_direitos"></dualListBox>
+						</div>
+						<div zclass="box-footer">
+							<div align="right">
+								<button zclass="btn btn-danger btn-sm"
+									type="button" id="btn_cancelar" iconSclass="fa fa-undo">
+									Cancelar
+								</button>
+								<label width="5%"></label>
+								<button zclass="btn btn-success btn-sm"
+									type="button" id="btn_gravar"
+									iconSclass="fa fa-save">
+									Gravar
+								</button>
+								<button zclass="btn btn-info btn-sm"
+									type="button" visible="false" 
+									id="btn_actualizar" iconSclass="fa fa-refresh">
+									Actualizar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div zclass="col-md-12">
+			<div zclass="box box-success">
+				<div zclass="box-header">
+					<x:h3 class="box-title">Perfis Registados</x:h3>
+				</div>
+				<div>
+					<div zclass="box-body">
+						<listbox id="lbx_perfis" checkmark="true">
+							<listhead>
+								<listheader width="5%"></listheader>
+								<listheader label="Perfil" width="50%" sort="auto(descricao)" />
+								<listheader label="Tipo" sort="auto(designacao)" />
+							</listhead>
+							<template name="model">
+								<listitem>
+									<listcell></listcell>
+									<listcell label="${each.rolename}" />
+									<listcell label="${each.type}" />
+								</listitem>
+							</template>
+						</listbox>
+					</div>
+					<div zclass="box-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+	</window>
+</zk> -->

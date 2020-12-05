@@ -1,0 +1,162 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+   
+   
+   
+   </style>
+	<window id="win_pesquisar_condutor"
+		apply="uem.co.mz.helpdesk.controller.registo.PesquisarClienteController">
+		<radiogroup id="rdgMembros"/>
+		
+		
+		<div id="div_content_out">
+
+		
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+			
+				
+				<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+								    <x:label>Tipo De Cliente</x:label>
+								    <div>
+									    <combobox width="50%" id="cbx_tipo_cliente" 
+									    placeholder="Selecione o tipo de cliente" readonly="true" >
+												<comboitem label="TODOS" />
+											<template name="model">
+												<comboitem label="${each.designacao}" />				
+											</template>				
+										</combobox>
+								   	</div>
+								</div>
+					</div>
+												
+				
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" >
+							Nome ou Apelido:
+						</x:label>
+						<textbox zclass="form-control" id="tbx_nome" style="margin-left:3px" />
+					</div>
+
+
+				</div>
+				
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" style="">
+						</x:label><separator orient="horizontal" spacing="2%px"/>
+						<button zclass="btn btn-warning btn-sm" id="btn_procurar"
+						type="button" iconSclass=" fa  fa-search"> Procurar </button>
+					</div>
+
+
+				</div>
+				
+				
+
+			</x:div>
+			
+
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div zclass="box-header">
+						<div class="row">
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:h3 class="box-title">
+							Lista de Clientes
+						</x:h3>
+						</div>
+					</div>
+					</div>
+					<div>
+						<div zclass="box-body">
+							<listbox id="lbx_clientes" checkmark="true" rows="7">
+	                    <listhead>
+	                        <listheader label="#" width="5%"/>
+	                        <listheader label="Nome" sort="auto(nome)" />
+	                        <listheader label="Tipo de Cliente" sort="auto(tipoCliente.designacao)" width="15%" />
+	                    	<listheader label="[Unidade Organica - Sector]" sort="auto(sector.departamento.unidadeOrganica.designacao)" />
+	                    	<listheader label="Solicitações" width="9%"/>
+	                  </listhead>
+	                   <template name="model">
+	                    <listitem>
+	                         <listcell></listcell>
+	                         <listcell label="${each.nome}" />
+	                         <listcell label="${each.tipoCliente.designacao}" />
+	                         <listcell label="${each.sector.departamento.unidadeOrganica.designacao } - ${each.sector.designacao }"/>
+	                         <listcell>
+	                         				<button zclass="btn btn-primary btn-sm" iconSclass="fa  fa-plus" 
+												width="100%" forward="onClick=onRegistarSolicitacao(${each})">
+											</button>
+							</listcell>
+	                         </listitem>
+                       </template>
+                    
+								<listfoot>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											
+											<listfooter align="right" span="2" style="color:white;">
+												<label
+													style="color:#EEEEEE; margin-right:5px;text-weight:800">
+													Total:
+												</label>
+											</listfooter>
+											<listfooter align="left">
+												<label
+													style="color:#EEEEEE; margin-right:5px"
+													id="lbl_total">
+
+												</label>
+											</listfooter>
+											<listfooter align="left">
+												<label
+													style="color:#EEEEEE; margin-right:5px" >
+
+												</label>
+											</listfooter>
+
+								</listfoot>
+							</listbox>
+
+						</div>
+						<div zclass="box-footer">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</window>
+</zk>

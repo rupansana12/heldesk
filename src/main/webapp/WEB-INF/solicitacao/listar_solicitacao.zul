@@ -1,0 +1,223 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+   
+   
+   
+   </style>
+	<window id="win_listar_solicitacao"
+		apply="uem.co.mz.helpdesk.controller.solicitacao.ListarSolicitacaoController">
+		<radiogroup id="rdgMembros"/>
+		
+		
+		<div id="">
+
+		
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+			
+				
+				<div zclass="col-lg-4 col-md-4 col-sm-12">
+								<div class="form-group">
+								    <x:label>Tipo De Cliente</x:label>
+								    <div >
+									    <combobox width="100%" id="cbx_tipo_cliente" constraint="no empty : campo obrigatorio"
+									    placeholder="Selecione o tipo de cliente" readonly="true" >
+											<template name="model">
+												<comboitem label="${each.designacao}" />				
+											</template>				
+										</combobox>
+								   	</div>
+								</div>
+							</div>
+					
+				<div zclass="col-lg-4 col-md-4 col-sm-12">
+								<div class="form-group">
+								    <x:label>Prioridade da Solicitação</x:label>
+									<combobox width="100%"
+										id="cbx_prioridade" 
+										placeholder="Selecione a prioridade da solicitacao" readonly="true">
+										<template name="model">
+											<comboitem
+												label="${each.designacao}" />
+										</template>
+									</combobox>
+								</div>
+							</div>		
+				
+				<div zclass="col-lg-4 col-md-4 col-sm-12">
+								<div class="form-group">
+								    <x:label>Estado de Manutenção</x:label><!-- Nao resolvido, Pendente, em progresso/Manutencao/resolvido  -->
+									<combobox width="100%"
+										id="cbx_estado" 
+										placeholder="Selecione a prioridade da solicitacao" readonly="true">
+										
+											<comboitem label="Nao resolvido (Sem solucao)" />
+											<comboitem label="Pendente" />
+											<comboitem label="Parcialmente Resolvido" />
+											<comboitem label="Em Manutencao" />
+											<comboitem label="Resolvido" />
+											
+										
+									</combobox>
+								</div>
+							</div>								
+				
+				<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" >
+							Numero de Referencia
+						</x:label>
+						<textbox zclass="form-control" id="tbx_numeroReferencia" style="margin-left:3px" />
+					</div>
+
+
+				</div>
+				
+				<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12" visible="true">
+					<div zclass="form-group">		
+						<x:label for="dtx_dataInicial" class="control-label" style=""> Prazo de manutencao entre </x:label>
+						<label style="color:red"> (dd/mm/aaaa) </label>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<datebox id="dtx_dataInicial" width="100%" readonly="false" visible="true"
+									buttonVisible="true" format="dd/MM/yyyy" />
+							</div>
+						</div>
+					</div>	
+			</div>	
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12" visible="true">
+					<div zclass="form-group">		
+						<!-- <x:label for="dtx_dataNascimento" class="control-label" style=""> Data Final </x:label> -->
+						<label style="color:red"> (dd/mm/aaaa) </label>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<datebox id="dtx_dataFinal" width="100%" readonly="false" visible="true"
+									buttonVisible="true" format="dd/MM/yyyy" />
+							</div>
+
+						</div>
+					</div>	
+			</div>
+				
+				<div zclass="col-md-1 col-lg-1 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" style="">
+						</x:label><separator orient="horizontal" spacing="2%"/>
+						<button zclass="btn btn-warning btn-sm" id="btn_procurar"
+						type="button" iconSclass=" fa  fa-search"> Procurar </button>
+					</div>
+
+
+				</div>
+				
+				
+
+			</x:div>
+			
+
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div zclass="box-header">
+						<div class="row">
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:h3 class="box-title">
+							Lista de Solicitações
+						</x:h3>
+						</div>
+					</div>
+					</div>
+					<div>
+						<div zclass="box-body">
+							<listbox id="lbx_solicitacoesRegistadas" checkmark="true" rows="7">
+	                    <listhead>
+	                        <listheader label="#" width="5%"/>
+	                        <listheader label="Cliente" sort="auto(cliente.nome)" width="20%"/>
+	                        <listheader label="Prioridade da Solicitação" sort="auto(prioridade.designacao)" width="12%" />                        
+	                        <listheader label="Data de Entrada" sort="auto(dataEntrada)" width="11%" />
+	                    	<listheader label="Equipamentos" sort="auto(estado)" width=""/>
+	                    	<listheader label="Estado" sort="auto(estado)" width="10%"/>
+	                    	<listheader label="Registar" width="8%"/>
+	                    	
+	                  </listhead>
+	                   <template name="model">
+	                    <listitem>
+	                         <listcell></listcell>
+	                         <listcell label="${each.cliente.nome}" />
+	                         <listcell label="${each.prioridade.designacao}" />
+	                         <listcell label="${each.dataRegisto}" />
+	                         <listcell >
+	                         		<zk forEach="${each.equipamentosSolicitados}">
+	                         			<label>+ ${each.equipamento} - ${each.referencia}</label><x:br></x:br>
+	                         		</zk>
+	                         </listcell>
+	                         <listcell label="${each.estado}" />
+	                         <listcell>
+	                         				<button zclass="btn btn-primary btn-sm" iconSclass="fa  fa-plus" 
+												width="100%" forward="onClick=onReportar(${each})">
+											</button>
+							</listcell>
+	                         </listitem>
+                       </template>                    
+								<listfoot>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											
+											<listfooter align="right" span="2" style="color:white;">
+												<label
+													style="color:#EEEEEE; margin-right:5px;text-weight:800">
+													Total:
+												</label>
+											</listfooter>
+											<listfooter align="left">
+												<label
+													style="color:#EEEEEE; margin-right:5px"
+													id="lbl_total">
+
+												</label>
+											</listfooter>
+											<listfooter style="color:white;"/>
+
+								</listfoot>
+							</listbox>
+
+						</div>
+						<div zclass="box-footer">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</window>
+</zk>

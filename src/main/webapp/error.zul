@@ -1,0 +1,13 @@
+<?page title="Erro" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Erro" border="normal" mode="modal" id = "win_error">
+<vbox>
+<label>Ocorreu um erro durante a execução desta operação!</label>
+<label>O administrador do Sistema foi informado automaticamente sobre o erro</label>
+<label> A para melhoramento do serviço mantemos o registo de todos os erros</label>
+<div align="center">
+<button label="OK" onClick="win_error.detach()"></button>
+</div>
+</vbox>
+</window>
+</zk>

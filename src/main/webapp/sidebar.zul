@@ -1,0 +1,114 @@
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<x:aside class="left-side sidebar-offcanvas">
+	
+                    
+		<x:section class="sidebar">
+			<x:div class="user-panel">
+				<div class="pull-left image">
+					<image sclass="img-circle" id="imgPflSide"></image>
+				</div>
+				<div class="pull-left info">
+					<x:a href="#">
+						<x:i class="fa fa-circle text-success"></x:i>
+						Activo
+					</x:a>
+				</div> 
+				
+				   <!-- visible to small devices only -->
+        
+			</x:div>
+			<x:ul class="sidebar-menu">
+				<x:li sclass="@bind(vm.initPage)" visible = "false">
+					<x:a class="cursor" >
+						<x:i class="fa fa-home"></x:i>
+						<x:span>Painel Inicial</x:span>
+					</x:a>
+				</x:li>
+				<x:li if="${sec:isAnyGranted('GESTAO_DA_ESTRUTURA_ORGANICA,GESTAO_DE_PARAMETROS_GERAIS,E_SUPER_ADMINISTRADOR')}" sclass="treeview ${vm.hoursPage}">
+					<x:a href="#">
+						<x:i class="fa  fa-cogs"></x:i>
+						<x:span>Parametrização</x:span>
+						<x:i class="fa fa-angle-left pull-right"></x:i>
+					</x:a>
+					<x:ul class="treeview-menu">
+						<x:li if="${sec:isAnyGranted('GESTAO_DE_PARAMETROS_GERAIS,GESTAO_DE_MARCA,GESTAO_DE_TIPO_DE_CLIENTE,GESTAO_DE_CATEGORIA_DE_SERVICO,GESTAO_DE_MARCA,GESTAO_DE_TIPO_DE_EQUIPAMENTO,GESTAO_DE_PRIORIDADE, E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/parametrizacao/configurar_parametros_gerais.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Parametros Gerais </x:a></x:li>
+						<x:li if="${sec:isAnyGranted('GESTAO_DA_ESTRUTURA_ORGANICA,GESTAO_DE_UNIDADE_ORGANICA, GESTAO_DE_DEPARTAMENTO, GESTAO_DE_SECTOR, E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/parametrizacao/configurar_estrutura_organica.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Estrutura Orgânica </x:a></x:li>
+						
+						<x:li if="${sec:isAnyGranted('GESTÃO_DE_LOCAIS,E_SUPER_ADMINISTRADOR')}" ><x:a href="#" onClick="@command('registarLocal')"><x:i class="fa fa-dot-circle-o"></x:i>Locais</x:a></x:li>
+			
+					</x:ul>
+			    </x:li>
+			    
+			    <x:li if="${sec:isAnyGranted('GESTÃO_DE_CICLO,E_SUPER_ADMINISTRADOR')}" sclass="treeview ${vm.hoursPage}">
+					<x:a href="#">
+						<x:i class="fa  fa-retweet"></x:i>
+						<x:span>Ciclo</x:span>
+						<x:i class="fa fa-angle-left pull-right"></x:i>
+					</x:a>
+					<x:ul class="treeview-menu">
+						<x:li ><x:a href="#" onClick="@command('registarCiclo')"><x:i class="fa fa-dot-circle-o"></x:i>Registar Ciclo</x:a></x:li>
+					</x:ul>
+			       </x:li>
+		
+				 <x:li if="${sec:isAnyGranted('GESTAO_DE_CLIENTES,VISUALIZAR_CLIENTES,E_SUPER_ADMINISTRADOR')}" sclass="treeview ${vm.hoursPage}" visible = "true">
+					<x:a href="#">
+						<x:i class="fa  fa-pencil-square-o"></x:i>
+						<x:span>Clientes</x:span>
+						<x:i class="fa fa-angle-left pull-right"></x:i>
+					</x:a>
+					<x:ul class="treeview-menu">
+						<x:li if="${sec:isAnyGranted('GESTAO_DE_CLIENTES,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/registo/registar_cliente.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Registar Clientes</x:a></x:li>
+						<x:li if="${sec:isAnyGranted('VISUALIZAR_CLIENTES,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/registo/pesquisar_cliente.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Pesquisar Clientes</x:a></x:li>
+											
+					</x:ul>
+				</x:li>
+				
+				<x:li if="${sec:isAnyGranted('GESTAO_DE_SOLICITACAO,LISTAR_SOLICITACOES,E_SUPER_ADMINISTRADOR')}" sclass="treeview ${vm.hoursPage}" visible = "true">
+					<x:a href="#">
+						<x:i class="fa fa-list"></x:i>
+						<x:span>Solicitações</x:span>
+						<x:i class="fa fa-angle-left pull-right"></x:i>
+					</x:a>
+					<x:ul class="treeview-menu">
+				
+						<x:li if="${sec:isAnyGranted('GESTAO_DE_SOLICITACAO,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/solicitacao/registar_solicitacao.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Registar Solicitaçao</x:a></x:li>
+						<x:li if="${sec:isAnyGranted('LISTAR_SOLICITACOES,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/solicitacao/listar_solicitacao.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Lista de Solicitações</x:a></x:li>
+											
+					</x:ul>
+				</x:li>
+				
+				<x:li if="${sec:isAnyGranted('ESTATISTICA')}" sclass="treeview ${vm.hoursPage}" visible = "true">
+					<x:a href="#">
+						<x:i class="fa fa-list"></x:i>
+						<x:span>Estatisticas</x:span>
+						<x:i class="fa fa-angle-left pull-right"></x:i>
+					</x:a>
+					<x:ul class="treeview-menu">
+				
+						<x:li if="${sec:isAnyGranted('ESTATISTICA')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/estatistica/estatistica.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Visualizar Estatisticas</x:a></x:li>
+											
+					</x:ul>
+				</x:li>
+					
+				<x:li if="${sec:isAnyGranted('UTILIZADOR,PERMISSOES,PERFIS,E_SUPER_ADMINISTRADOR')}" sclass="treeview ${vm.hoursPage}">
+					<x:a href="#">
+						<x:i class="fa  fa-desktop"></x:i>
+						<x:span>Administração</x:span>
+						<x:i class="fa fa-angle-left pull-right"></x:i>
+					</x:a>
+					<x:ul class="treeview-menu">
+					    <x:li if="${sec:isAnyGranted('UTILIZADOR,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/administracao/utilizador.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Utilizador</x:a></x:li>
+						<x:li if="${sec:isAnyGranted('PERMISSOES,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/administracao/permissoes.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Gerir Permissoes </x:a></x:li>
+						<x:li if="${sec:isAnyGranted('PERFIS,E_SUPER_ADMINISTRADOR')}"><x:a href="#" zk:onClick='conteudo.src="/WEB-INF/administracao/perfis.zul";'><x:i class="fa fa-dot-circle-o"></x:i>Perfis</x:a></x:li>
+					</x:ul>
+				</x:li> 
+				
+			</x:ul>
+			    <x:div class="visible-xs hidden-sm hidden-md hidden-lg">
+              <x:ul class="nav nav-pills nav-stacked custom-nav">
+                  <x:li><x:a href="j_spring_security_logout"><x:i class="fa fa-sign-out"></x:i> <x:span>Sair</x:span></x:a></x:li>
+                </x:ul>
+            </x:div>
+		</x:section>
+	</x:aside>
+</zk>

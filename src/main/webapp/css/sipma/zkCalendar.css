@@ -1,0 +1,169 @@
+.selectedButton .z-button-cm {
+	font-weight: bold;
+}
+
+.chooser-popup div.z-popup-cl {
+	border: none;
+}
+
+.chooser-popup .z-popup-cnt {
+	padding: 0;
+}
+
+.chooser-popup .z-groupbox {
+	-moz-border-radius: 1px 1px 1px 1px;
+}
+
+.z-calendars-month-header {
+	color: #0F3B82;
+	position: absolute;
+	top: 0;
+	left: 0;
+	table-layout: fixed;
+	width: 100%;
+	background-color: #CCE5F4;
+	line-height: 15px;
+}
+
+.z-calendars-day-of-month-bg .z-calendars-week-today {
+	background-color: #F9F9C6;
+}
+
+.z-calevent-daylong-month .z-calevent-text {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-style: solid;
+	border-width: 0;
+	overflow: hidden;
+}
+
+.z-calevent-inner .z-calevent-cnt {
+	background: #ACD5EE;
+	font-family: inherit;
+	font-size: 12px;
+	padding-left: 1px;
+	padding-right: 1px;
+	line-height: 14px;
+	color: white;
+}
+
+.z-calendars-month-date-evt {
+	font-family: inherit;
+	font-size: 12px;
+	padding: 1px 1px 0 2px;
+	vertical-align: top;
+	line-height: 14px;
+}
+
+.z-calendars-month-header {
+	color: white !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	table-layout: fixed;
+	width: 100%;
+	background: #65CEA7 !important;
+	line-height: 15px;
+	padding-top: 15px;
+}
+
+.z-calendars-inner {
+	padding-left: 0px;
+	margin: 0 0px;
+	border-right: 1px solid #ddd;
+	background: none !important;
+}
+
+.z-calendars-month-date {
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	color: #44523F;
+	line-height: 16px;
+	overflow: hidden;
+	padding-right: 0px;
+	text-align: right;
+	font-family: inherit;
+	font-size: 12px;
+}
+
+.z-calendars-day-of-month-bg td {
+	border-bottom: 1px solid #ddd;
+}
+
+.z-calendars-body {
+	background: none !important;
+	zoom: 0;
+}
+
+.z-calendars-b1, .z-calendars-b2, .z-calendars-b3 {
+	background: none;
+	font-size: 0;
+	line-height: 0;
+	margin: 0 2px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+}
+
+.z-calendars-fr {
+	background: transparent no-repeat right bottom;
+	background-image: url(/sipma/zkau/web/3eb2aea8/img/shdrg.gif);
+	padding-right: 0px;
+	zoom: 0;
+}
+
+.z-calendars-month-header .z-calendars-day-of-week {
+	color: white;
+	padding: 1px;
+	font-family: inherit; font-size : 12px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-style: solid;
+	border-width: 0;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.z-calendars-t1, .z-calendars-t2, .z-calendars-t3 {
+	background: #65CEA7 !important font-size: 0;
+	line-height: 0;
+	margin: 0 0px;
+	height: 0px;
+	padding: 0;
+	overflow: hidden;
+	line-height: 0;
+	margin: 0 0px;
+	height: 0px;
+}
+
+.z-calendars-fl {
+	background: none;
+	padding-left: 0px;
+	zoom: 0;
+	display: none;
+}
+
+.z-calendars-month-week {
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+}
+
+.z-calevent-daylong-month .z-calevent-text {
+	height: 15px !important;
+}
+
+.z-notification .z-notification-content {
+	background: none repeat scroll 0 center transparent;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0 !important;
+	overflow: hidden;
+	background-color: #424f63;
+	color: white;
+	width: auto;
+	min-height: 53px;
+}

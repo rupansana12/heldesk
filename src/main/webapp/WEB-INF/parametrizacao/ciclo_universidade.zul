@@ -1,0 +1,224 @@
+
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+<window  border="none" contentStyle="overflow:auto" width="100%" id="win_cicloUnivercidade"
+			apply="mz.ciuem.sgea.controller.ciclo.CicloUniversidadeCtrl"	>
+
+
+								<div zclass="box box-primary">
+									<div>
+										<div zclass="box-body">
+											<div class="form-group">
+												<x:label>
+													Universidade:
+												</x:label>
+												<combobox width="60%"
+													id="cbx_universidade"
+													placeholder="Selecione a universidade"
+													constraint="no empty:Selecione uma Universidade"
+													readonly="true">
+													<template
+														name="model">
+														<comboitem
+															label="${each.designacao}" />
+													</template>
+												</combobox>
+
+												<button
+													zclass="btn btn-info btn-sm pull-right" type="button"
+													id="btn_adicionar" iconSclass="fa fa-plus-square">
+
+													Adicionar
+												</button>
+											</div>
+
+
+										</div>
+
+									</div>
+								</div>
+
+								<div zclass="box box-success">
+									<div zclass="box box-default">
+										<div zclass="box-header">
+											<x:h3 class="box-title">
+												Universidades a
+												Adicionar
+											</x:h3>
+										</div>
+										<div>
+											<div zclass="box-body">
+												<listbox
+													id="lbx_universidade" emptyMessage="Sem Dados" rows="5">
+													<listhead>
+
+														<listheader
+															label="Universidade" sort="auto(nome)" width="40%" />
+															<listheader
+															label="Código"  width="13%" align="center"/>
+
+														<listheader
+															label="Valor por Disciplina" width="13%" align="center"/>
+															
+															<listheader
+															label="Entidade"  width="13%" align="center"/>
+															
+															<listheader 
+															   label="Canais Remotos" align="center"/>
+														
+													
+													<listheader
+															label="Remover"  width="9%" align="center"/>
+													</listhead>
+													<template
+														name="model">
+														<listitem>
+
+															<listcell
+																label="${each.designacao}" />
+																<listcell>
+																<intbox placeholder="Código da Universidade" maxlength="2" width="95%" constraint="no empty:Campo de preenchimento obrigatorio">
+																</intbox>
+															</listcell>
+
+															<listcell>
+																<doublebox
+																	placeholder="Valor em metical" width="95%"
+																	constraint="no empty:Campo de preenchimento obrigatorio">
+																</doublebox>
+															</listcell>
+															<listcell>
+																<intbox
+																	placeholder="Entidade da Universidade" width="95%"
+																	constraint="no empty:Campo de preenchimento obrigatorio">
+																</intbox>
+															</listcell>
+															<listcell>
+															<checkbox></checkbox>
+															</listcell>
+															<listcell>
+                                                             <button label = "Remover" 
+                                                             zclass ="btn btn-danger btn-xs" iconSclass="fa fa-trash-o" forward=" onClick = 'onRemover(${ each})'"></button>
+														    </listcell>
+														</listitem>
+													</template>
+												</listbox>
+											</div>
+											<div zclass="box-footer" align="center">
+												<button
+													zclass="btn btn-danger btn-sm" type="button"
+													id="btn_cancelar" iconSclass="fa fa-undo"
+													visible="false">
+
+													Cancelar
+												</button>
+												<label width="5%"></label>
+												<button
+													zclass="btn btn-success btn-sm" type="button"
+													id="btn_gravar" iconSclass="fa fa-save" visible="false">
+
+													Gravar
+												</button>
+												<button
+													zclass="btn btn-info btn-sm" type="button" visible="false"
+													id="btn_actualizar" iconSclass="fa  fa-refresh">
+													Actualizar
+												</button>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+
+								<div zclass="box box-success">
+									<div zclass="box box-success">
+										<div zclass="box-header">
+											<x:h3 class="box-title">
+												Universidades
+												Adicionadas
+											</x:h3>
+											
+											<div align="right">
+											<separator></separator>
+											<button
+												zclass="btn btn-warning btn-sm" type="button"
+												id="btn_imprimirUniversidadesAdicionadas" style="margin-right:3%"
+												iconSclass="fa fa-print">
+
+												Imprimir PDF
+											</button>
+										</div>
+										
+										</div>
+										<div>
+											<div zclass="box-body">
+												<listbox
+													id="lbx_cicloUniversidade" checkmark="true"
+													multiple="true" rows="5"
+													emptyMessage="Sem Dados Registados">
+													<listhead>
+														<listheader
+															width="5%">
+														</listheader>
+
+														<listheader
+															label="Universidade" sort="auto(universidade.designacao)"
+															width="40%" />
+														<listheader
+															label="Data Inicio" sort="auto(dataInicio)" align="center"/>
+														<listheader
+															label="Data Fim" sort="auto(dataFim)" align="center"/>
+															<listheader
+															label="Código" sort="auto(codigo)" width="7%" align="center"/>
+														<listheader
+															label="Valor por Disciplina" sort="auto(dataFim)" align="center"/>
+															<listheader
+															label="Canais" sort="auto(canais)" align="center"/>
+													</listhead>
+													<template
+														name="model">
+														<listitem>
+															<listcell />
+
+															<listcell
+																label="${each.universidade.designacao}" />
+															<listcell
+																label="${each.dataInicio}" />
+
+															<listcell
+																label="${each.dataFim}" />
+																<listcell
+																label="${each.codigo}" />
+
+															<listcell
+																label="${each.valorDisciplina}" />
+																
+															<listcell>
+																<div
+																	align="center">
+																	<button
+																		zclass="btn btn-sm "
+																		visible="${each.canais=='true'}">
+																		Sim
+																	</button>
+
+																	<button
+																		zclass="btn btn btn-sm"
+																		visible="${each.canais=='false'}">
+																		Não
+																	</button>
+																</div>
+															
+															</listcell>
+
+														</listitem>
+													</template>
+												</listbox>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							
+</window>
+</zk>

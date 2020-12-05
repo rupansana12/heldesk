@@ -1,0 +1,217 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+   
+   
+   
+   </style>
+	<window id="win_reportar_solicitacao" mode="modal" title="Gerir Manutenção Equiamento" width="70%" position="center"
+		closable="true" border="normal" apply="uem.co.mz.helpdesk.controller.solicitacao.ReportarSolicitacaoController">
+		<radiogroup id="rdgEstados"/>
+		
+		
+		<div id="">
+
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+				<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<textbox placeholder="Sem dados  do Cliente" 
+								readonly="true" zclass="form-control" id="tbx_estado" style="margin-left:3px;color:red;text-align:center" />
+					</div>
+
+
+				</div>
+				
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" >
+							Nome do Cliente
+						</x:label>
+						<textbox placeholder="Sem dados  do Cliente"
+								readonly="true" zclass="form-control" id="tbx_nome" style="margin-left:3px" />
+					</div>
+
+
+				</div>
+				<div zclass="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+								    <x:label>Tipo De Cliente</x:label>
+								    <div >
+									    <combobox width="100%" id="cbx_tipo_cliente" 
+									    	placeholder="Sem dados  do Cliente" readonly="true" >
+											<template name="model">
+												<comboitem label="${each.designacao}" />				
+											</template>				
+										</combobox>
+								   	</div>
+								</div>
+							</div>
+					
+				<div zclass="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+								    <x:label>Prioridade da Solicitação</x:label>
+									<combobox width="100%"
+										id="cbx_prioridade" 
+										placeholder="Selecione a prioridade da solicitação" readonly="true">
+										<template name="model">
+											<comboitem
+												label="${each.designacao}" />
+										</template>
+									</combobox>
+								</div>
+							</div>		
+				
+				<div zclass="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+								    <x:label>Data de registo:</x:label>
+									<datebox width="100%" format="dd-MM-yyyy" id="dtx_dataRegisto"></datebox>
+								</div>
+				</div>
+				
+					
+				
+				<div zclass="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+								<x:label>Serviço</x:label>
+								<textbox  placeholder="Digite a descricao do Serviço"
+										zclass="form-control" style="text-transform:uppercase;"  id="tbx_observacao" rows="3"/>
+								</div>
+							</div>	
+							
+			<div visible="false" zclass="col-lg-6 col-md-6 col-sm-12">
+								<div class="form-group">
+								<x:label>Valor a pagar:</x:label>
+								<doublebox  placeholder="00.00 Mtn" format="####.00"
+										zclass="form-control" style="text-transform:uppercase;"  id="dbx_valor_pagar" />
+								</div>
+							</div>						
+				
+					
+			</x:div>
+			
+
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div zclass="box-header">
+						<div class="row">
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:h3 class="box-title">
+							Lista de Equipamentos e problemas
+						</x:h3>
+						</div>
+					</div>
+					</div>
+					<div>
+						<div zclass="box-body">
+							<listbox id="lbx_solicitacoes" checkmark="false" rows="2">
+	                    <listhead>                      
+	                    	<listheader label="[Equipamentos]" sort="auto" width=""/>
+	                    	<listheader label="[Descrição dos Problemas]" sort="auto" width=""/>
+	                  </listhead>
+	                   <template name="model">
+	                    <listitem>
+	                         <listcell >
+	                         		<zk forEach="${each.equipamentosSolicitados}">
+	                         			<label>+ ${each.equipamento} - ${each.referencia}</label> <x:br></x:br>
+	                         		</zk>
+	                         </listcell>
+	                         <listcell >
+	                         		<zk forEach="${each.equipamentosSolicitados}">
+	                         			<label style="text-color: red;text:red" >${each.descricaoProblema!=null ? each.descricaoProblema : ''}</label><x:br></x:br>
+	                         		</zk>
+	                         </listcell>
+	                         </listitem>
+                       </template>
+							</listbox>
+
+						</div>
+						<div zclass="box-footer">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+			
+				<div zclass="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" >
+							Estado da Solicitação
+						</x:label>
+						<div> 
+							
+							<radio label="Resolvida" checked="true" radiogroup="rdgEstados" style="text-transform:uppercase;" id="rdx_resolvido"/> <separator orient="vertical" spacing="10px"/>
+							<radio label="Parcialmente Resolvida" radiogroup="rdgEstados" style="text-transform:uppercase;" id="rdx_parcialmente_resolvido"/> <separator orient="vertical" spacing="10px"/>
+							<radio label="Não Resolvida" radiogroup="rdgEstados" style="text-transform:uppercase;" id="rdx_nao_resolvido"/> 
+							
+						</div>
+					</div>
+					
+				</div>
+				
+				<div zclass="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" >
+							Observações
+						</x:label>
+						<textbox placeholder="Digite as descricoes e caracteristicas do equipamento"
+										zclass="form-control" id="tbx_observacoes" rows="2"/>
+					</div>
+					
+				</div>
+				
+			</x:div>
+			
+			<div zclass="box-footer">
+		        <div align="right">
+		        <button zclass="btn btn-danger btn-sm" type="button" id="btn_cancelar" iconSclass="fa fa-undo">
+				 Cancelar
+	            </button>
+		        <label width="5%"></label>
+		          <button zclass="btn btn-success btn-sm" type="button"	id="btn_gravar" iconSclass="fa fa-save" autodisable="self,btn_actualizar">
+				
+						Gravar
+				  </button>
+				   <label width="5%"></label>
+				  <button zclass="btn btn-info btn-sm" type="button" visible="false"	id="btn_actualizar" iconSclass="fa fa-refresh">
+					
+						Actualizar
+				  </button>
+				  </div>
+		        </div>		
+
+
+		</div>
+
+	</window>
+</zk>

@@ -1,0 +1,537 @@
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<style>
+
+
+
+
+
+		.stylish { 
+	    display: block;
+		width: 35px; 
+		height: 35px;
+		border-radius: 50%; 
+		border: 4px double #ccc; 
+		font-size: 25px;
+		color: #666; 
+		line-height: 20px; 
+		text-align: center;
+		text-decoration: none; 
+		text-shadow: 0 1px 0 #fff;
+		background:#ddd
+		 }
+
+		.stylishActive { 
+		display: block;
+		 width: 35px; 
+		height: 35px;
+		border-radius: 50%; 
+		border: 4px double #ccc; 
+		font-size: 25px;
+		color: #666; 
+		line-height: 20px; 
+		text-align: center;
+		text-decoration: none; 
+		text-shadow: 0 1px 0 #fff;
+		
+
+		background: #009700
+
+		}
+
+		.stylish:hover { 
+		border: 4px double #bbb; 
+		color: #aaa;
+		text-decoration: none;
+		 background: #ddd 
+		 }
+
+		.separator{
+
+		width:160%; 
+		
+		background: #ddd;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; 
+		top: 35px; 
+		z-index: -1; 
+		}
+		
+			.separator2{
+
+		width:160%; 
+		
+		background: #009700;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; 
+		top: 35px; 
+		z-index: -1; 
+		}
+
+		.separatorD{
+
+		width:70%;
+		 background: #ddd;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; top: 35px; z-index: -1; }
+
+		.separatorC{
+
+		width:100%; 
+		
+		background: #009700;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 60%; top: 35px;
+		 z-index: -1; }
+
+
+
+	</style>
+	<window apply="uem.co.mz.movecoa.controller.validacao.DadosBasicos2ValidacaoController" id="win3">
+	<custom-attributes composerName="var" />
+		<div id="div_content_out">
+
+		<x:div class="row">
+
+				<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12"
+					align="center">
+
+
+					<div class="form-group">
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+
+							<div class="stylishActive" style=" border: 4px double #ccc;">1</div>
+							<div class="separatorC"
+								style="margin-top:-17px; margin-left:50%; ">
+							</div>
+
+						</div>
+
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+							<div class="stylishActive">2</div>
+							<div class="separator2" style="margin-top:-17px;margin-left:-10%">
+							</div>
+
+						</div>
+
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+							<div class="stylish">3</div>
+							<div class="separatorD"
+								style="margin-top:-17px;margin-left:-70%">
+							</div>
+
+						</div>
+
+						
+					</div>
+				</div>
+			</x:div>
+				<separator></separator>
+			<!-- <separator></separator> -->
+
+			<x:div class="row">
+		<!-- 	<div zclass="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+			<x:label style="color:red"><x:b>NB: Preencha os Dados pessoais de acordo com o seu documento de Identificação.</x:b></x:label>
+			<x:label visible="${var.fase==1}" style="color:red"><x:b> ( Anote o Numero de Candidato: ${var.codigo} )</x:b></x:label>
+				</div>
+			
+      	<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+		      <x:div class="navbar-right">
+              <x:ul sclass="nav navbar-nav">
+              <x:li class="dropdown user user-menu">
+               	<x:button type="button"
+               		class="btn btn-default btn-md" data-toggle="modal"
+               		data-target="#myModal">
+               		<x:a class="toggle-btn"><x:i class="fa fa-power-off">Sair</x:i></x:a>
+               	</x:button>
+
+              </x:li>
+                </x:ul>
+                </x:div>
+			</div> -->
+			
+			
+			<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			
+			<x:h4 class="box-title" style="color:green">Filiação</x:h4>
+			
+			<div class="form-group">
+			<div class = "row" visible="true" >
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+						<x:label style="" for="tbx_pai">
+							Filho(a) de (Nome do Pai):
+						</x:label>
+						<textbox zclass="form-control" maxlength="60"
+							constraint="no empty,/[a-zA-Z].+/ : Introduza o nome do seu pai"
+							id="tbx_pai" />
+			</div>
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">	
+						<x:label style="" for="tbx_mae">
+							E de (Nome da Mãe):
+						</x:label>
+						<textbox zclass="form-control"
+							constraint="no empty,/[a-zA-Z].+/ : Introduza o nome completo da sua Mãe"
+							id="tbx_mae" />
+					</div>
+			</div>
+			</div>		
+			</div>
+			
+			
+			<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			
+			<x:h4 class="box-title" style="color:green">Domicilio Fiscal</x:h4>
+			
+			<div class="form-group">
+			<div class = "row" visible="true" >
+			
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+
+						<x:label style="">País :</x:label>
+						<combobox width="99%" id="cbx_pais_domicilio_fiscal"
+							readonly="true"  >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+						</combobox>
+
+			</div>
+			
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+						
+						<x:label>Província:</x:label>
+						<combobox width="100%"
+							id="cbx_provincia_domicilio_fiscal" 
+							readonly="true"
+							>
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+					
+					
+			</div>
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<div class = "row" visible="true" >
+			
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">	
+						<x:label>Distrito :</x:label>
+						<combobox width="100%"
+							id="cbx_distrito_domicilio_fiscal" constraint="no empty: Introduza o Distrito " readonly="true"
+							>
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+			</div>
+					
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">	
+								<x:label zclass=" control-label"> Endereço: </x:label>
+									<textbox id="txtEndereco" zclass=" form-control" width="100%"
+										placeholder="Digite o endereço" style="margin:0px"
+										constraint="no empty: campo de prenchimento obrigatorio"> </textbox>
+						
+			</div>
+					
+			</div>
+			</div>		
+			</div>
+			
+			
+			
+			<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			
+			<x:h4 class="box-title" style="color:green">Licença de Condução</x:h4>
+			
+			<div class="form-group">
+			<div class = "row" visible="true" >
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">	
+								<x:label zclass=" control-label"> Número da Carta: </x:label>
+									<textbox id="itxNumeroCarta" zclass=" form-control" width="100%" disabled="true" maxlength="12"
+										placeholder="Digite o Numero da Carta" style="margin:0px"
+										constraint="no empty: campo de prenchimento obrigatorio"> </textbox>
+						
+			</div>
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+						<x:label style="">
+							Categoria da Carta:
+						</x:label>
+						<combobox width="100%"
+							id="cbx_tipo_carta" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.tipo} - ${each.categoria}" />
+
+							</template>
+
+						</combobox>
+					</div>
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+
+						<x:label style="">País de Emissão:</x:label>
+						<combobox width="99%" id="cbx_pais_emissao"
+							readonly="true"  >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+						</combobox>
+
+			</div>
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+						
+						<x:label>Província de Emissão:</x:label>
+						<combobox width="100%"
+							id="cbx_provincia_emissao" 
+							readonly="true"
+							>
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+					
+					
+			</div>		
+					
+					
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<div class = "row" visible="true" >
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">	
+
+							<x:label for="dtx_primeiraEmissaoCarta" class="control-label" style=""> Primeira Emissão</x:label>
+							<label style="color:red"> (dd/mm/aaaa) </label>
+							
+
+				<div class = "row" visible="true" >
+			
+			<div zclass="col-md-7 col-lg-7 col-sm-12 col-xs-12">				
+							
+							
+							<datebox id="dtx_primeiraEmissaoCarta" width="99.9%" format="dd/MM/yyyy"
+								readonly="false" visible="true"  buttonVisible="true"/>
+								
+			</div>
+			<div class = "col-lg-5 col-md-5 col-sm-12 col-xs-12">
+						<div >
+							
+							<textbox zclass="form-control" disabled="true"
+								
+								id="txt_anos" />
+						</div>
+			</div>
+			</div>					
+								
+			</div>
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">	
+
+							<x:label for="dtx_EmissaoCarta" class="control-label" style=""> Emitida aos </x:label>
+							<label style="color:red"> (dd/mm/aaaa) </label>
+							
+
+							<div class = "col-lg-6 col-md-6 col-sm-12" visible="false" >
+									<x:span style = "color:red">
+								Documento Vitalicio
+								
+								</x:span>
+							</div>
+							
+							
+							<datebox id="dtx_emissaoCarta" width="99.9%" format="dd/MM/yyyy"
+								readonly="false" visible="true"  buttonVisible="true"/>
+								
+			</div>
+			
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">	
+
+							<x:label for="dtx_validade" class="control-label" style=""> Valido Até </x:label>
+							<label style="color:red"> (dd/mm/aaaa) </label>
+							
+
+							<div class = "col-lg-6 col-md-6 col-sm-12" visible="false" id="dv_vitalicio">
+									<x:span style = "color:red">
+								Documento Vitalicio
+								
+								</x:span>
+							</div>
+							
+							
+							<datebox id="dtx_validadeCarta" width="99.9%" format="dd/MM/yyyy"
+								readonly="false" visible="true"  buttonVisible="true"/>
+								
+			</div>
+					
+			<div zclass="col-md-3 col-lg-3 col-sm-12 col-xs-12">	
+								<x:label zclass=" control-label"> Escola de Condução: </x:label>
+									<textbox id="txtEscolaConducao" zclass=" form-control" width="100%"
+										placeholder="Digite a Escola de Conducao" style="margin:0px" > </textbox>
+						
+			</div>
+					
+			</div>
+			</div>		
+			</div>
+			
+			
+			
+			
+			</x:div>
+
+
+
+			<x:div class="row">
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+				
+					<x:label style="">Categoria de Membro :</x:label>
+						<combobox width="99%" id="cbx_categoria_membro"
+							readonly="true"  >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+						</combobox>
+				</div>
+
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+		
+
+
+				</div>
+
+			</x:div>
+
+
+
+
+
+			<x:div class="row">
+				<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+
+
+				</div>
+				<div align="right" style="margin-right:15px">
+				     <x:div class="navbar-right">
+              <x:ul sclass="nav navbar-nav">
+              <x:li class="dropdown user user-menu">
+               	<x:button type="button"
+               		class="btn btn-default btn-md" data-toggle="modal"
+               		data-target="#myModal">
+               		<x:a class="toggle-btn"><x:i class="fa fa-power-off">Sair</x:i></x:a>
+               	</x:button>
+
+              </x:li>
+                </x:ul>
+                </x:div>
+					<button zclass="btn btn-warning btn-sm"
+						id="btn_anterior" iconSclass="fa fa-chevron-left">
+
+						Anterior
+					</button>
+					<label width="5%"></label>
+					<button zclass="btn btn-info btn-sm" label="Validar e Prosseguir"
+						id="btn_proximo" iconSclass="fa fa-chevron-right" dir="reverse">
+
+					</button>
+					<!-- <label width="5%"></label>
+					<button zclass="btn btn-success btn-sm" label="Validar Membro"
+						id="btn_gravar" iconSclass="fa fa-chevron-right" dir="reverse">
+
+					</button> -->
+					
+				</div>
+
+			</x:div>
+			
+			
+			
+					<x:div class="modal fade" id="myModal" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel">
+						<x:div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<x:button type="button"
+										class="close" data-dismiss="modal" aria-label="Close">
+										x
+									</x:button>
+									<x:h4 class="modal-title"
+										id="myModalLabel">
+										Sair do Sistema
+									</x:h4>
+								</div>
+								<div class="modal-body"
+									id="div_candidato">
+									<x:strong style="color:black">
+										Caro.
+									</x:strong>
+									<x:br></x:br>
+									<x:strong style="color:black">
+								Dejesa sair do sistema e continuar com o Pré-Registo noutra altura?
+									</x:strong>
+									<x:br></x:br>
+									<x:br></x:br>
+				
+
+								</div>
+
+								<div class="modal-footer">
+								<div class="pull-left">
+								 <x:a data-dismiss="modal" aria-label="Close" style="color:red" class="btn btn-flat">Cancelar</x:a>
+									</div>
+									<div class="pull-right">
+                      <x:a href="j_spring_security_logout" style="color:green" class="btn btn-flat">Confirmar</x:a>
+                    </div>
+
+								</div>
+							</div>
+						</x:div>
+					</x:div>
+
+
+		</div>
+
+		<include id="inc_main"></include>
+
+
+
+	</window>
+</zk>

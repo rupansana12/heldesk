@@ -1,0 +1,84 @@
+<?page title="Alterar a Senha" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:p="xhtml" xmlns:k="zk">
+	<window title="Alterar a Senha" border="normal" position="center" id="win_alterar_senha"
+			contentStyle="overflow:auto" closable="true" mode="modal" width="20%" apply="uem.co.mz.helpdesk.administracao.AlterarSenhaController">
+	
+	<p:div class="col-lg-12">
+                    <!-- <p:div class="ibox float-e-margins"> -->
+                        <div style="padding-top:13px; pargin-left:4px">
+                            <p:h4> Alterar Senha
+                            </p:h4>
+                            <p:hr  height="2px"></p:hr>
+                        </div>
+                        <p:div class="ibox-content">
+                            
+                            
+                            <p:div class="form-horizontal">
+                               <p:div class="form-group">
+                               
+                               <p:div class="col-lg-12">
+                                 <p:label >
+                                 Senha Actual: 
+								</p:label>
+                                <div >
+								<textbox id="txtSenhaActual" zclass="form-control" 
+											width="100%" >
+										</textbox>
+								
+								</div>
+                                </p:div>
+                               </p:div>
+                               
+                               <p:div class="form-group">
+                                
+                                <p:div class="col-lg-12">
+                                 <p:label >
+                                 Senha: 
+								</p:label>
+                                <div >
+								<textbox id="txtSenha" zclass="form-control" 
+											width="100%" >
+										</textbox>
+								
+								</div>
+                                </p:div>
+                                </p:div>
+                                
+                                <p:div class="form-group">
+                                
+                                <p:div class="col-lg-12">
+                                 <p:label >
+                                 Confirmar Senha: 
+								</p:label>
+                                <div >
+								<textbox id="txtConfirmarSenha" zclass="form-control" 
+											width="100%" >
+										</textbox>
+								
+								</div>
+                                </p:div>
+                                </p:div>
+                                
+                                <p:div class="form-group">
+                                
+                                <p:div class="col-lg-12">
+		                         <div align="right">
+									<button label="Gravar" id="btnGravar" zclass="btn btn-w-m btn-success"
+										style="margin:0px" /> 
+									<button label="Cancelar" id="btnCancelar" zclass="btn btn-w-m btn-info"
+										style="margin:0px" />
+										
+								</div>
+                                
+                                </p:div>
+                                </p:div>
+                                
+                              </p:div>
+                              
+                              		 
+						 </p:div>
+			
+			<!-- /.col-lg-4 -->
+		</p:div>
+	</window>
+</zk>

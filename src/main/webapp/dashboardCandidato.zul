@@ -1,0 +1,406 @@
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+<style>
+
+
+
+</style>
+	<window id="win_dashb" apply="mz.ciuem.sgea.controller.DashboardCandidato">
+		<custom-attributes composerName="win" />
+		
+		<div id="div_content_out">
+
+		<div class="row">
+<div class="col-xs-12">
+				<!-- jQuery Knob -->
+				<div class="box box-solid">
+					<div class="box-header">
+						<x:i class="fa fa-bar-chart-o"></x:i>
+						<x:h3 class="box-title">
+							Estado da Pré-Inscrição
+						</x:h3>
+						<div class="box-tools pull-right">
+							<x:button class="btn btn-default btn-sm"
+								data-widget="collapse">
+								<x:i class="fa fa-minus"></x:i>
+							</x:button>
+							<!-- <x:button class="btn btn-default btn-sm"
+								data-widget="remove">
+								<x:i class="fa fa-times"></x:i>
+							</x:button> -->
+						</div>
+					</div>
+					<div zclass="box-body">
+						<div class="row">
+						
+						<div class="row" style=" margin-left:5px; margin-right:-5px">
+						<x:div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 ">
+						<x:h3 class="box-title" style="color:green; ;" align="center" id="lbl_nome">
+						<x:i class="fa fa-user"></x:i>
+						${win._candidato.nome}
+						</x:h3>
+						<x:hr style="height:5px;"></x:hr>
+						</x:div>
+						
+						 <x:div class="col-md-2 col-lg-2 visible-lg visible-md">
+						.
+						</x:div>
+						 <x:div class="col-md-6 col-lg-6 visible-lg visible-md">
+						 
+						<!-- <button
+								id="btn_dadosPessoais" zclass="btn btn-danger btn-sm" width="80%"
+								type="button" iconSclass=" fa  fa-eye">VER/EDITAR DADOS PESSOAIS
+
+						</button> -->
+						</x:div>
+						
+						
+						
+						</div>
+						
+						<x:div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-center">
+						
+						<image id="img_pic" 
+										src="img/avatar.png" class="img-thumbnail"
+										style="cursor:pointer" width="150px" height="150px">
+									</image>
+									<x:br></x:br>
+									
+														
+											<button visible="false" zclass="btn btn-warning btn-sm"
+																	type="button" iconSclass=" fa  fa-spinner">Validação de Foto Pendente
+
+																</button>
+																<button
+																	visible="${win._candidato.fotoDauValidada }" zclass="btn btn-success btn-sm"
+																	type="button" iconSclass=" fa fa-check">Foto Validada Com sucesso
+
+																</button>
+
+																<button
+																	visible="${win._candidato.fotoDauPendente==false ?  win._candidato.fotoDauValidada==false ? true : false : false}"
+																	zclass="btn btn-danger btn-sm" type="button" iconSclass=" fa fa-arrows-alt">Foto Recusada (Substitua)
+
+																</button>
+						
+						</x:div>
+
+
+                         <x:div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 text-center">
+                      
+							<x:div
+								class="col-md-3 col-lg-3 col-sm-6 col-xs-12 text-center" visible="false">
+								<x:input type="text" class="knob"
+									value="0" data-skin="tron" data-thickness="0.1" data-width="90"
+									data-height="90" data-fgColor="#00a65a"
+									id="int_dadosBasicos">
+								</x:input>
+								<x:div class="knob-label">
+									<x:label>Dados Basicos</x:label>
+								</x:div>
+							</x:div>
+
+							<x:div
+								class="col-md-3 col-lg-3 col-sm-6 col-xs-12 text-center" visible="false">
+								<x:input type="text" class="knob"
+									value="0" data-skin="tron" data-thickness="0.1" data-width="90"
+									data-height="90" data-fgColor="#00a65a" id="int_dadosPessoais">
+								</x:input>
+								<x:div class="knob-label">
+									<x:label>Dados Pessoais</x:label>
+								</x:div>
+							</x:div>
+
+							<x:div
+								class="col-md-3 col-lg-3 col-sm-6 col-xs-12 text-center" visible="false">
+								<x:input type="text" class="knob"
+									value="0" data-skin="tron" data-thickness="0.1" data-width="90"
+									data-height="90" data-fgColor="#00a65a" id="int_cursos">
+								</x:input>
+								<x:div class="knob-label">
+									<x:label>Escolha dos Cursos</x:label>
+								</x:div>
+							</x:div>
+
+							<x:div
+								class="col-md-3 col-lg-3 col-sm-6 col-xs-12 text-center" visible="false">
+								<x:input type="text" class="knob"
+									value="0" data-skin="tron" data-thickness="0.1" data-width="90"
+									data-height="90" data-fgColor="#00a65a" id="int_factura" />
+								<x:div class="knob-label">
+									<x:label>
+										Verificar Factura
+									</x:label>
+								</x:div>
+							</x:div>
+							
+							<div
+															class="row">
+															<div
+															class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+															<label
+																value="Data:" />
+															<label
+																value="${win.candidato.dataNascimento}" />
+														</div>
+															<div
+																class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+																<label
+																	value="Filho de: " />
+																<label
+																	value="${win.candidato.nomePai}" />
+															</div>
+															<div
+																class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+																<label
+																	value="e de:" />
+																<label
+																	value="${win.candidato.nomeMae}" />
+															</div>
+														</div>
+														
+														<x:hr></x:hr>
+
+														<div
+															class="row">
+															<div
+																class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+																<label
+																	value="${win.candidato.tipoDocumento} - Nr:" />
+																<label
+																	value="${win.candidato.numeroDocumento}" />
+															</div>
+															<div
+																class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+																<label
+																	value="Validade:" />
+																<label
+																	value="${win.candidato.validade}" />
+															</div>
+															<div
+																class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+																<label
+																	value="NUIT" />
+																<label
+																	value="${win.candidato.nuit}" />
+															</div>
+														</div>
+														
+														<div class="row">
+												<x:hr></x:hr>
+												<div
+													class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+													<div class="row">
+														<div
+															class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+															<label
+																value="Província de Residencia:" />
+															<label
+																value="${win.candidato.provinciaResidencia}" />
+														</div>
+														<div
+															class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+															<label
+																value="Distrito:" />
+															<label
+																value="${win.candidato.distritoResidencia}" />
+														</div>
+														
+														<div
+															class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+															<label
+																value="Escola Pré-Universitária:" />
+															<label
+																value="${win.candidato.escolaPreUniversitaria}" />
+														</div>
+
+													</div>
+													
+
+												</div>
+											</div>
+														
+														
+							
+							<x:div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+						 
+						<button id="btn_dadosPessoais"
+								zclass="btn btn-danger btn-sm" width="100%"
+								type="button" iconSclass=" fa  fa-eye">VER/EDITAR DADOS PESSOAIS
+
+						</button>
+						</x:div>
+							
+							</x:div>
+
+						</div>
+						
+						<div class="box-header" style="margin-top:5px; margin-bottom:-15px">
+						 <x:i class="fa fa-briefcase"></x:i>
+						<x:h3 class="box-title">
+							Candidaturas
+						</x:h3>
+						 </div>
+						 <x:hr></x:hr>
+						     
+
+
+									<div
+										class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+										<zk
+											forEach="${win.candidaturas }">
+											<div class="">
+												<x:legend>
+													${each.cicloUniversidade.universidade.designacao
+													}
+												</x:legend>
+												<div class="row">
+												   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+												        <x:label style="color:green">Curso</x:label>
+												   </div>
+												    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+												         <x:label style="color:green"> Disciplinas</x:label>
+												   </div>
+												   
+												    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" align="center">
+												         <x:label style="color:green">Ja foi paga?</x:label>
+												   </div>
+												      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" align="center">
+												         <x:label style="color:green"> Validada?</x:label>
+												   </div>
+												</div>
+												
+												<custom-attributes
+													cursos="${each.candidaturaCursos}" />
+												<div class="row">
+													<div
+														class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+														<zk
+															forEach="${cursos }">
+															<div
+																class="row">
+																<div
+																	class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+																	<div>
+																		<label
+																			value="${each}">
+																		</label>
+																	</div>
+																</div>
+																<div
+																	class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+																	 																	<zk 
+																	 																		forEach="${each.candidaturaDisciplinas }"> 
+
+
+																	 																		<label 
+																	 																			value="${each.cicloDisciplina.disciplina.designacao } ,">
+																	 																		</label> 
+
+
+
+																	 																	</zk> 
+																</div>
+
+															
+															
+															
+															</div>
+															<x:hr></x:hr>
+														</zk>
+													</div>
+													<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6" align="center">
+																   	<button zclass="btn btn-md btn-success"
+                                            		                  iconSclass="fa fa-thumbs-o-up"  visible="${each.pago}">Sim
+                                            	                     </button>
+
+                                            	                     <button zclass="btn btn btn-md btn-danger"
+                                            		                  iconSclass="fa fa-thumbs-o-down"  visible="${not each.pago}">Não
+                                            	                     </button>
+																	
+														</div>
+														
+															<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6" align="center">
+																	   	<button zclass="btn btn-md btn-success"
+                                            		                  iconSclass="fa fa-thumbs-o-up"  visible="${each.validado}">Sim
+                                            	                     </button>
+
+                                            	                     <button zclass="btn btn btn-md btn-danger"
+                                            		                  iconSclass="fa fa-thumbs-o-down"  visible="${not each.validado}">Não
+                                            	                     </button>
+																	
+																</div>
+													
+												</div>
+											</div>
+
+				
+										</zk>
+
+									</div>
+
+										
+											
+						 
+			
+
+					</div>
+				</div>
+			</div>
+
+<div class="col-xs-12">
+
+<div align="right">
+										<button
+											zclass="btn btn btn-md btn-warning" type="button" id="btn_imprimir"
+											iconSclass="fa fa-print" visible="true">
+											Imprimir Facturas
+										</button></div>
+</div>
+
+
+		
+			<x:script src="js/jquery.min.js"></x:script>
+			<x:script src="js/jquery-ui-1.10.3.min.js"
+				type="text/javascript">
+			</x:script>
+			<x:script src="js/bootstrap.min.js"
+				type="text/javascript">
+			</x:script>
+
+
+
+			<x:script src="js/plugins/jqueryKnob/jquery.knob.js"
+				type="text/javascript">
+			</x:script>
+
+			<x:script
+				src="js/plugins/daterangepicker/daterangepicker.js"
+				type="text/javascript">
+			</x:script>
+
+
+			<x:script
+				src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"
+				type="text/javascript">
+			</x:script>
+
+
+			<x:script src="js/AdminLTE/dashboard.js"
+				type="text/javascript">
+			</x:script>
+
+
+		</div>
+		
+	</div>
+	
+	<include id="inc_main"></include>	
+		
+	</window>
+</zk>

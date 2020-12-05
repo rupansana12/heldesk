@@ -1,0 +1,159 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+   
+   
+   
+   </style>
+	<window id="win_listagem_condutor"
+		apply="uem.co.mz.movecoa.controller.estatistica.ListagemCondutorController">
+		<radiogroup id="rdgValidados"/>
+		<radiogroup id="rdgFiltros"/>
+		
+		
+		<div id="div_content_out">
+
+		
+
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+			
+				<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<radio label="Por Pais e Provincia" id="" value="Por Pais e Provincia" radiogroup="rdgFiltros" checked="true" /><separator orient="horizontal" spacing="5px"/>
+						<radio label="Por Categoria de Membro" id="" value="Por Categoria de Membro" radiogroup="rdgFiltros"/> <separator orient="horizontal" spacing="5px"/>
+						<radio label="Por Local de Emissao da Carta" id="" value="Por Local de Emissao da Carta" radiogroup="rdgFiltros"/> <separator orient="horizontal" spacing="5px"/>
+						<radio label="Por Tipo de Carta" id="" value="Por Tipo de Carta" radiogroup="rdgFiltros"/> 
+					</div>
+
+
+				</div>
+				<div zclass="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" style="">
+							Nome ou Apelido:
+						</x:label>
+						<textbox zclass="form-control" id="tbx_nome"  />
+					</div>
+
+
+				</div>
+				
+				
+				
+				
+
+			</x:div>
+			
+			
+			
+
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+				<!-- 	<div zclass="box-header">
+					<div class="row">
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:h3 class="box-title">
+							Lista de Membros
+						</x:h3>
+						</div>
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label/>
+						<div align="right">
+							<radio label="Condutores Não Validados" id="rdoNaoValidados" value="Condutores Nao Validados" radiogroup="rdgValidados"  /><separator orient="vertical" spacing="20px"/>
+							<radio label="Condutores Validados" id="rdoValidados" value="Condutores Validados" radiogroup="rdgValidados"/> <separator orient="vertical" spacing="20px"/>
+							<radio label="Todos Membros" id="rdoTodosMembros" value="Todos Membros" radiogroup="rdgValidados" checked="true"/> 
+						</div>
+						</div>
+					</div>
+						
+					</div> -->
+					<div>
+						<div zclass="box-body">
+							<listbox id="lbx_condutor" rows="10" mold="paging" pageSize="10">
+								<listhead>
+									
+									<listheader label="Designacao" sort="auto(designacao)"  align="left" width=""/>
+									
+									<listheader label="Nao Validados" sort="auto(quantidade)" width="15%" align="center" />
+									
+									<listheader label="Validados" sort="auto(quantidade1)"  align="center" width="15%"/>
+									
+									<listheader label="Outros" sort="auto(quantidade2)"  align="center" width="15%"/>
+								</listhead>
+								<template name="model">
+									<listitem  >
+										<listcell
+											label="${each.designacao} ">
+										</listcell>
+										
+										<listcell
+											label="${each.quantidade}">
+										</listcell>
+										<listcell
+											label="${each.quantidade1} ">
+										</listcell>
+										<listcell
+											label="${each.quantidade2} ">
+										</listcell>
+									</listitem>
+								</template>
+								<listfoot>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											
+											<listfooter align="right" span="3" style="color:white;">
+												<label
+													style="color:#EEEEEE; margin-right:5px;text-weight:800">
+													Total:
+												</label>
+											</listfooter>
+											<listfooter align="left">
+												<label
+													style="color:#EEEEEE; margin-right:5px"
+													id="lbl_total">
+
+												</label>
+											</listfooter>
+
+								</listfoot>
+							</listbox>
+
+						</div>
+						<div zclass="box-footer">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</window>
+</zk>

@@ -1,0 +1,63 @@
+<?page title="Brevemente" contentType="text/html;charset=UTF-8"?>
+<?link rel="icon" type="image/x-icon" href="img/uem_md.png"?>
+<?link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/ionicons.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/morris/morris.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/AdminLTE.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/zk.wcs" rel="stylesheet" type="text/css" ?>
+<?link href="css/inoLab.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/listbox.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/chosenBox.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/myCss.css" rel="stylesheet" type="text/css" ?>
+
+<?link href="css/metro/style.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/metro/style-responsive.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/metro/style-default.css" rel="stylesheet" type="text/css" ?>
+
+<?link href="css/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" ?>
+<?link href="css/holidays.css" rel="stylesheet" type="text/css" ?>
+
+<?meta content="text/html; charset=UTF-8" pageEncoding="UTF-8"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<?variable-resolver class="org.zkoss.spring.DelegatingVariableResolver"?>
+
+<?page title="${c:l('title')}"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+<window >
+  <x:div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <x:section class="content-header">
+          <x:h1 style="color:red">
+           Brevemente
+          </x:h1>
+          <x:ol class="breadcrumb">
+            <x:li><x:a href="#" onClick="@command('home')"></x:a></x:li>
+        
+          </x:ol>
+        </x:section>
+
+        <!-- Main content -->
+        <x:section class="content">
+
+          <x:div class="error-page">
+            <x:h2 class="headline text-green"> ...!</x:h2>
+            <x:div class="error-content">
+              <x:h3><x:i class="fa fa-warning text-green"></x:i> Oops! A página encontra-se indisponível.</x:h3>
+              <x:p>
+                Ainda não é possível encontrar a página de está a procura.
+               
+              </x:p>
+            
+            </x:div><!-- /.error-content -->
+          </x:div><!-- /.error-page -->
+        </x:section><!-- /.content -->
+      </x:div>
+</window>
+</zk>

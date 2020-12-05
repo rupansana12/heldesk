@@ -1,0 +1,380 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+
+<style>
+
+
+
+
+
+		.stylish { 
+	    display: block;
+		width: 35px; 
+		height: 35px;
+		border-radius: 50%; 
+		border: 4px double #ccc; 
+		font-size: 25px;
+		color: #666; 
+		line-height: 20px; 
+		text-align: center;
+		text-decoration: none; 
+		text-shadow: 0 1px 0 #fff;
+		background:#ddd
+		 }
+
+		.stylishActive { 
+		display: block;
+		 width: 35px; 
+		height: 35px;
+		border-radius: 50%; 
+		border: 4px double #ccc; 
+		font-size: 25px;
+		color: #666; 
+		line-height: 20px; 
+		text-align: center;
+		text-decoration: none; 
+		text-shadow: 0 1px 0 #fff;
+		
+
+		background: #009700
+
+		}
+
+		.stylish:hover { 
+		border: 4px double #bbb; 
+		color: #aaa;
+		text-decoration: none;
+		 background: #ddd 
+		 }
+
+		.separator{
+
+		width:160%; 
+		
+		background: #ddd;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; 
+		top: 35px; 
+		z-index: -1; 
+		}
+		
+			.separator2{
+
+		width:160%; 
+		
+		background: #009700;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; 
+		top: 35px; 
+		z-index: -1; 
+		}
+
+		.separatorD{
+
+		width:70%;
+		 background: #ddd;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; top: 35px; z-index: -1; }
+
+		.separatorC{
+
+		width:100%; 
+		
+		background: #009700;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 60%; top: 35px;
+		 z-index: -1; }
+
+
+
+	</style>
+
+
+
+		<window xmlns:x="xhtml" id="win5" apply="uem.co.mz.movecoa.controller.validacao.TirarFotoValidacaoController">
+		
+		<custom-attributes composerName="cn" />
+		<radiogroup id="rdgEnquadramentoEmpresa"/>
+		<div id="div_content_out">
+		
+		
+		
+			<x:div class="row">
+
+				<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12"
+					align="center">
+
+
+					<div class="form-group">
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+
+							<div class="stylishActive" style=" border: 4px double #ccc;">1</div>
+							<div class="separatorC"
+								style="margin-top:-17px; margin-left:50%; ">
+							</div>
+
+						</div>
+
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+							<div class="stylishActive">2</div>
+							<div class="separator2" style="margin-top:-17px;margin-left:-10%">
+							</div>
+
+						</div>						
+						
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+							<div class="stylishActive">3</div>
+							<div class="separatorC"
+								style="margin-top:-17px;margin-left:-90%">
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</x:div>
+				<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+		
+		
+		
+		
+		
+		
+		<x:div class="row">
+		
+			<separator></separator>
+			<separator></separator>
+		
+		<div sclass="col-md-6 col-lg-6 col-sm-12 col-xs-12" visible="true">
+		
+		<x:h4 class="box-title" style="color:green">Dados Profissionais</x:h4>
+		
+		<div class="form-group" visible="false">
+										<x:label>País</x:label>
+									<combobox width="100%"
+										id="cbx_pais" placeholder="Selecione a País" readonly="true">
+										<template name="model">
+											<comboitem
+												label="${each.designacao}" />
+										</template>
+									</combobox>
+		</div>
+		
+		<div class="form-group" visible="false">
+										<x:label>Província</x:label>
+									<combobox width="100%"
+										id="cbx_provincia" placeholder="Selecione a Província" readonly="true">
+										<template name="model">
+											<comboitem
+												label="${each.designacao}" />
+										</template>
+									</combobox>
+		</div>
+		<div class="form-group" visible="true" id="div_empresa">
+										<x:label>Nome da Empresa</x:label>
+										<combobox width="100%" id="cbx_empresa" autocomplete="true" style="text-transform:uppercase;"
+											placeholder="Selecione a Empresa"
+											readonly="false">
+											<template name="model">
+												<comboitem label="${each.nome}" />
+											</template>
+										</combobox>
+		</div>
+		
+		</div>	
+			
+		<div sclass="col-md-6 col-lg-6 col-sm-12 col-xs-12" visible="false">
+		
+		<x:h4 class="box-title" style="color:green">Dados Profissionais</x:h4>
+			
+		<div class="form-group">
+		<div class = "row" visible="true" >
+			<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+						<x:label style="" for="tbx_pai">
+							Nome Empresa:
+						</x:label>
+						<textbox zclass="form-control" maxlength="60"
+							id="tbx_nome_empresa" />
+							<!-- constraint="no empty,/[a-zA-Z].+/ : Introduza o nome do seu pai" -->
+			</div>
+		</div>
+		</div>
+		<div class="form-group">	
+		<div class = "row" visible="true" >
+			<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">	
+						<x:label style="" for="tbx_mae">
+							Endereço:
+						</x:label>
+						<textbox zclass="form-control"
+							id="tbx_endereco_empresa" />
+							<!-- constraint="no empty,/[a-zA-Z].+/ : Introduza o nome completo da sua Mãe" -->
+					</div>
+			</div>	
+		</div>
+			
+			<div class="form-group">
+			<div class = "row" visible="true" >
+			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<!-- <x:label>Celular :     </x:label> -->
+						<x:label for="dtx_dataEmissaoDocumento" class="control-label" style=""> Celular : </x:label>
+							<label style="color:red"> (incluindo o código do país ) </label>
+						<!-- <div class="input-group">
+							<div class="input-group-addon">+258</div> -->
+							<textbox zclass="form-control" disabled="false" maxlength="15" xmlns:w="client"
+								placeholder="ex: +2588200000000"
+								
+								id="tbx_celular_empresa" ><attribute w:name="doKeyPress_"> <![CDATA[
+                  function(evt){
+                   if(!this._shallIgnore(evt, "0123456789"))
+                    this.$doKeyPress_(evt);
+                  } ]]> </attribute></textbox>
+						<!-- </div> -->
+						
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class = "row" visible="true" >
+			<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">	
+						<x:label style="" for="tbx_mae">
+							Enquadramento da Empresa:
+						</x:label>
+						<div><radio label="Privada" id="rdoPrivada" radiogroup="rdgEnquadramentoEmpresa" checked="true"/> <separator orient="vertical" spacing="10px"/>
+							 <radio label="Pública" id="rdoPublica" radiogroup="rdgEnquadramentoEmpresa"/></div>
+					</div>
+			</div>	
+			</div>
+		</div>		
+				
+				
+		<div sclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			<div sclass="box box-info">
+				<x:center>
+					<x:div class="box-header">
+						<x:h3 style="color:green">Foto do Membro</x:h3>
+					</x:div>
+					<x:div sclass="box-body">
+							
+									<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+									<image id="img_pic" 
+										src="img/avatar.png" class="img-thumbnail"
+										style="cursor:pointer" width="150px" height="150px">
+									</image>
+									    <timer id="timer" delay="2000" repeats="true" /> 
+							</div>
+							
+									<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+												<label
+													style="color:red">
+													A foto deve ser tipo passe, com um tamanho máximo de 2MB e deve estar no formato .pdf ou jpg
+					
+
+												</label>
+												<vlayout
+													id="vly_ficheiros">
+
+												</vlayout>
+                       </div>
+											
+
+					</x:div>
+					
+					
+					
+					<div zclass="box-footer">
+				
+							<div align="center">
+										
+										
+										
+										<button label="Anexar Foto Tipo PASSE" 
+												zclass="btn  btn-md btn-block btn-success" iconSclass="fa fa-cloud-upload"
+												id="btn_upload" upload="true,maxsize=6000">
+											</button>
+											
+											<button label="Tirar Photo"  style  = "margin-top:4px"
+												zclass="btn   btn-md btn-info btn-block" iconSclass="fa  fa-camera"
+												id="btn_take_pic" >
+											</button>
+									<button label="Baixar Foto" style  = "margin-top:4px"
+												zclass="btn  btn-md btn-block btn-primary" iconSclass="fa fa-download"
+												id="btn_download_foto" visible="false">
+											</button>
+											
+										</div>
+									</div>
+									
+									<div id = "div_imagem"></div>
+				
+				</x:center>
+				
+			
+			</div>
+		</div>
+							
+				
+		</x:div>
+					
+			<div align="right" style="margin-right:15px; margin-top:10px">
+							<button zclass="btn btn-success btn-sm"
+								id="btn_anterior" iconSclass="fa fa-chevron-left">
+		
+								Anterior
+							</button>
+							<label width="5%"></label>
+							<button zclass="btn btn-info btn-sm" label="Validar e Imprimir Comprovativo"
+								id="btn_proximo" iconSclass="fa fa-chevron-right" dir="reverse">
+		
+							</button>
+							<label width="5%"></label>
+							<button zclass="btn btn-success btn-sm" label="Validar e Pesquisar outro"
+										id="btn_gravar" iconSclass="fa fa-chevron-right" dir="reverse">
+
+							</button>
+							
+							<label width="5%"></label>
+							<button zclass="btn btn-warning btn-sm" label="Sair" visible="false"
+										id="btn_sair" iconSclass="fa fa-chevron-right" dir="reverse">
+
+							</button>
+								     
+						</div>
+						
+						
+						
+						
+								
+					
+		
+				</div>
+		
+				<include id="inc_main"></include>
+		</window>
+</zk>

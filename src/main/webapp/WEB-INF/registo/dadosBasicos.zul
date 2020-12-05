@@ -1,0 +1,621 @@
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<style>
+
+
+
+
+		.stylish { display: block; width: 35px; height: 35px;
+		border-radius: 50%; border: 4px double #ccc; font-size: 25px;
+		color: #666; line-height: 20px; text-align: center;
+		text-decoration: none; text-shadow: 0 1px 0 #fff;
+		background:#ddd }
+
+		.stylishActive { display: block; width: 35px; height: 35px;
+		border-radius: 50%; border: 4px double #ccc; font-size: 25px;
+		color: #666; line-height: 20px; text-align: center;
+		text-decoration: none; text-shadow: 0 1px 0 #fff;
+
+
+		background: #009700
+
+		}
+
+		.stylish:hover { border: 4px double #bbb; color: #aaa;
+		text-decoration: none; background: #ddd }
+
+		.separator{
+
+		width:160%;
+
+		background: #ddd;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; top: 35px; z-index: -1; }
+
+		.separatorD{
+
+		width:70%; background: #ddd;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 0%; top: 35px; z-index: -1; }
+
+		.separatorC{
+
+		width:100%;
+
+		background: #009700;
+
+		content: '';
+
+		height: 2px;
+
+
+		left: 60%; top: 35px; z-index: -1; }
+
+
+
+	</style>
+	<window apply=""
+		id="win2">
+		<custom-attributes composerName="win2" />
+
+		<div id="div_content_out">
+
+
+			<x:div class="row"  >
+			<div >
+				<x:div class="row">
+
+				<div zclass="col-md-12 col-lg-12 col-sm-12 col-xs-12"
+					align="center">
+
+
+					<div class="form-group">
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+
+							<div class="stylishActive" style=" border: 4px double #ccc;">1</div>
+							<div class="separatorC"
+								style="margin-top:-17px; margin-left:50%; ">
+							</div>
+
+						</div>
+
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+							<div class="stylish">2</div>
+							<div class="separator" style="margin-top:-17px;margin-left:-10%">
+							</div>
+
+						</div>
+
+						<div
+							zclass="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+							<div class="stylish">3</div>
+							<div class="separatorD"
+								style="margin-top:-17px;margin-left:-70%">
+							</div>
+
+						</div>
+
+						
+					</div>
+				</div>
+			</x:div>
+			<separator></separator>
+			<separator></separator>
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12" visible="false">
+		      <x:div class="navbar-right">
+              <x:ul sclass="nav navbar-nav">
+              <x:li class="dropdown user user-menu">
+               	<x:button type="button"
+               		class="btn btn-default btn-md" data-toggle="modal"
+               		data-target="#myModal">
+               		<x:a class="toggle-btn"><x:i class="fa fa-power-off">Sair</x:i></x:a>
+               	</x:button>
+
+              </x:li>
+                </x:ul>
+                </x:div>
+			</div>
+			
+			
+			
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12" id="dv_dados1">
+					<x:h4 class="box-title" style="color:green">Dados Pessoais</x:h4>
+
+					<div class="form-group">
+						<x:label class="control-label" style="">
+							Apelido:
+						</x:label>
+						<textbox zclass="form-control" maxlength="50" style="text-transform:uppercase;"
+							constraint="no empty,/[a-zA-Z].+/ : Introduza o seu apelido "
+							id="tbx_apelido" />
+					</div>
+
+					<div class="form-group">
+						<x:label class="control-label" style=""> Nome </x:label>
+						(<label style="color:red"> Sem incluir o apelido</label>)
+						<textbox zclass="form-control" style="text-transform:uppercase;"
+							constraint="no empty: Introduza o primeiro nome e outros"
+							maxlength="50" id="tbx_nome" />
+					</div>
+
+
+					<div class="form-group">
+					<div class = "row" visible="true" >
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label>Género:</x:label>
+						<combobox width="100%" id="cbx_genero" readonly="true">
+							<comboitem label="MASCULINO" />
+							<comboitem label="FEMININO" />
+
+						</combobox>
+					</div>
+
+					<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label>Estado Civil:</x:label>
+						<combobox width="100%" id="cbx_estadoCivil" readonly="true">
+							<comboitem label="SOLTEIRO(A)" />
+							<comboitem label="CASADO(A)" />
+							<comboitem label="VIÚVO(A)" />
+							<comboitem label="DIVORCIADO(A)" />
+
+						</combobox>
+					</div>
+					</div>
+					</div>
+					
+					<div class="form-group">
+						<x:label style="">
+							Pais de Nascimento:
+						</x:label>
+						<combobox width="100%"
+							id="cbx_pais_nascimento" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+					</div>
+					
+					
+					<div class="form-group">
+					<div class = "row" visible="true" >
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label style="">
+							Província de Nascimento:
+						</x:label>
+						<combobox width="100%"
+							id="cbx_provincia_nascimento" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+						
+						</div>
+						
+						
+					<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label>Distrito :</x:label>
+						<combobox width="100%"
+							id="cbx_distrito_nascimento" constraint="no empty: Introduza o Distrito " readonly="true"
+							>
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+						
+						</div> 
+						</div>
+						
+					</div>
+					
+
+					<div class="form-group">
+					<div class = "row" visible="true" >
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label for="dtx_dataNascimento" class="control-label" style=""> Nascido aos( </x:label>
+						<label style="color:red"> (dd/mm/aaaa) </label>)
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<datebox id="dtx_dataNascimento" constraint="no empty: Campo de preenchimento obrigatorio"
+									width="100%" readonly="false" visible="true"
+									buttonVisible="true" format="dd/MM/yyyy" />
+							</div>
+
+							<!-- <div class="col-lg-6 col-md-6">
+								<x:label style="color:red">
+									Somente candidatos que terão
+									completado pelo menos 15 anos ate
+									31.12.2017
+								</x:label>
+
+							</div> -->
+
+
+						</div>
+						
+						</div>
+						
+						<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						
+						
+						
+						
+						<x:label>Idade:     </x:label>
+						<div class="input-group">
+							
+							<textbox zclass="form-control" disabled="true"
+								
+								id="txt_anos" />
+								<div class="input-group-addon">anos</div>
+						</div>
+						
+						
+						
+						</div>
+						
+						</div>
+
+
+					</div>
+				</div>
+
+
+				
+			<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12" >
+				<x:h4 class="box-title" style="color:green">Documentação</x:h4>
+					<div class="form-group">
+					<div class = "row" visible="true" >
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label>Tipo de Documento:</x:label>
+						<combobox width="99.9%" id="cbx_tipoDocumento"
+							constraint="no empty:Introduza o tipo de Documento" readonly="true"
+							>
+							<comboitem label="Bilhete de Identidade" />
+							<comboitem label="Bilhete de Identidade Vitalicio" />
+							<comboitem
+								label="Talão de Bilhete de Identidade">
+							</comboitem>
+							<comboitem label="Carta de Condução">
+							</comboitem>
+							<comboitem label = "Cartao de eleitor"></comboitem>
+							<comboitem label="Passaporte" />
+							<comboitem label="DIRE" />
+						</combobox>
+						
+						</div>
+						
+						
+					<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label style="">Número do Documento:</x:label>
+						<textbox zclass="form-control" maxlength="25" width="99.9%"
+							
+							constraint="no empty,/(\d|\w)+/ : Introduza um número válido"
+							id="tbx_numeroDocumento" />
+						
+						</div> 
+						</div>
+						
+					</div>
+				
+				
+					<div class="form-group">
+					<div class = "row" visible="true" >
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label for="dtx_dataEmissaoDocumento" class="control-label" style=""> Emitido aos ( </x:label>
+							<label style="color:red"> dd/mm/aaaa </label>)
+							
+
+							<div class = "col-lg-6 col-md-6 col-sm-12" visible="false" id="dv_emissao">
+									<x:span style = "color:red">
+								Documento Vitalicio
+								
+								</x:span>
+							</div>
+							
+							
+							<datebox id="dtx_dataEmissaoDocumento" width="99.9%" format="dd/MM/yyyy"
+								readonly="false" visible="true"  buttonVisible="true"/>
+								
+								
+								<!-- <div class = "col-lg-6 col-md-6 col-sm-12">
+								
+								<x:label style = "color:red">
+								O prazo de validade do documento não deverá expirar antes do dia 12.01.2018
+								
+								</x:label>
+								</div> -->
+						
+						</div>
+						
+						
+							<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label for="dtx_dataValidadeDocumento" class="control-label" style=""> Valido Até( </x:label>
+							<label style="color:red"> dd/mm/aaaa </label>)
+							
+
+							<div class = "col-lg-6 col-md-6 col-sm-12" visible="false" id="dv_vitalicio">
+									<x:span style = "color:red">
+								Documento Vitalicio
+								
+								</x:span>
+							</div>
+							
+							
+							<datebox id="dtx_dataValidadeDocumento" width="99.9%" format="dd/MM/yyyy"
+								readonly="false" visible="true"  buttonVisible="true"/>
+								
+								
+								<!-- <div class = "col-lg-6 col-md-6 col-sm-12">
+								
+								<x:label style = "color:red">
+								O prazo de validade do documento não deverá expirar antes do dia 12.01.2018
+								
+								</x:label>
+								</div> -->
+						
+						</div>
+						</div>
+						
+					</div>
+					
+					
+					<div class="form-group">
+					<div class = "row" visible="true" >
+					
+					<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label style="">
+							Pais de Emissão:
+						</x:label>
+						<combobox width="100%"
+							id="cbx_pais_emissao" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+						
+						</div> 
+						
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label style="">
+							Província de Emissão:
+						</x:label>
+						<combobox width="100%"
+							id="cbx_provincia_emissao" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.designacao}" />
+
+							</template>
+
+						</combobox>
+						
+						</div>
+						
+						</div>
+						
+					</div>
+					
+					
+					<div class="form-group">
+						<x:label style="">NUIT:</x:label>
+						<textbox zclass="form-control"  maxlength="9" xmlns:w="client" disabled="false" 
+							 id="tbx_nuit" >
+							<attribute w:name="doKeyPress_"> <![CDATA[
+			                  function(evt){
+			                   if(!this._shallIgnore(evt, "0123456789"))
+			                    this.$doKeyPress_(evt);
+			                  } ]]> </attribute>
+                  </textbox>
+					</div>
+
+
+
+		
+
+					<div class="form-group">
+					<div class = "row" visible="true" >
+                    	<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label>Celular:     </x:label>
+						<div class="input-group">
+							<div class="input-group-addon">+258</div>
+							<textbox zclass="form-control" disabled="true"
+								
+								constraint="no empty, /([8][0-9]{8})|(\s*)/:Introduza um número de celular válido!"
+								id="tbx_celular" />
+						</div>
+						
+						</div>
+						
+						
+							<div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<!-- <x:label>Celular Alternativo:     </x:label> -->
+						<x:label for="dtx_dataEmissaoDocumento" class="control-label" style=""> Celular Alternativo: </x:label>
+							<label style="color:red"> (+ codigo do pais ) </label>
+						<!-- <div class="input-group">
+							<div class="input-group-addon">+258</div> -->
+							<textbox zclass="form-control" disabled="false" maxlength="15" xmlns:w="client"
+								placeholder="ex: +2588200000000"
+								
+								id="tbx_celularAlternativo" ><attribute w:name="doKeyPress_"> <![CDATA[
+                  function(evt){
+                   if(!this._shallIgnore(evt, "0123456789"))
+                    this.$doKeyPress_(evt);
+                  } ]]> </attribute></textbox>
+						<!-- </div> -->
+						
+						</div>
+						</div>
+						
+					</div>
+					
+					<div class="form-group">
+						<x:label style="">Email:</x:label>
+						<textbox zclass="form-control" placeholder="Digite o email"
+							 id="tbx_email" />
+							 
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+			</x:div>
+			<div id="dv_proximo" >
+			<x:div class="row">
+				<div align="right" style="margin-right:15px">
+					<label width="5%"></label>
+					<button zclass="btn btn-info btn-sm" label="Próximo"
+						id="btn_proximo" iconSclass="fa fa-chevron-right" dir="reverse">
+					</button>
+				</div>
+			</x:div>
+			</div>
+
+			
+			
+			
+						<!-- Modal Candidato-->
+					<x:div class="modal fade" id="myModal" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel">
+						<x:div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<x:button type="button"
+										class="close" data-dismiss="modal" aria-label="Close">
+										x
+									</x:button>
+									<x:h4 class="modal-title"
+										id="myModalLabel">
+										Sair do Sistema
+									</x:h4>
+								</div>
+								<div class="modal-body"
+									id="div_candidato">
+									<x:strong style="color:black">
+										Caro.
+									</x:strong>
+									<x:br></x:br>
+									<x:strong style="color:black">
+								Dejesa sair do sistema e continuar com o Pré-Registo noutra altura?
+									</x:strong>
+									<x:br></x:br>
+									<x:br></x:br>
+				
+
+								</div>
+
+								<div class="modal-footer">
+								<div class="pull-left">
+								 <x:a data-dismiss="modal" aria-label="Close" style="color:red" class="btn btn-flat">Cancelar</x:a>
+									</div>
+									<div class="pull-right">
+                      <x:a href="j_spring_security_logout" style="color:green" class="btn btn-flat">Confirmar</x:a>
+                    </div>
+
+								</div>
+							</div>
+						</x:div>
+					</x:div>
+
+
+		</div>
+		
+					<x:div class="modal fade" id="myModalTerminar" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel">
+						<x:div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<x:button type="button"
+										class="close" data-dismiss="modal" aria-label="Close">
+										x
+									</x:button>
+									<x:h4 class="modal-title"
+										id="myModalLabelTerminar">
+										 Parabéns
+									</x:h4>
+								</div>
+								<div class="modal-body"
+									id="div_candidatoTerminar">
+									<x:strong style="color:black">
+										Caro.
+									</x:strong>
+									<x:br></x:br>
+									<x:strong style="color:black">
+									A sua candidatura foi feita com
+								sucesso.
+								<x:br></x:br>
+								 Não repita o pré-registo,
+								isto é, o preenchimento de dados. Para
+								qualquer alteração dos dados( Dados
+								pessoais, Novas opções de Universidades
+								e Cursos) faca login em prereg.uem.mz
+								usando os dados iniciais de acesso fornecidos.
+								<x:br></x:br>
+								<x:hr></x:hr>
+								
+								
+										O seu pagamento poderá se
+										reflectir no sistema dentro de
+										48horas. 
+										<x:br></x:br>
+										Consulte o estado
+										do seu pagamento:
+										<x:br></x:br>
+										 1 - Através
+										deste sistema.
+										<x:br></x:br>
+										2 - Através do
+										serviço de SMS (Enviando uma
+										mensagem pra 94940 com o formato YYY)
+										
+									</x:strong>
+									<x:br></x:br>
+									<x:br></x:br>
+
+
+								</div>
+
+								<div class="modal-footer">
+									<div class="pull-left">
+										<x:a data-dismiss="modal"
+											aria-label="Close" style="color:red" class="btn btn-flat">
+											Cancelar
+										</x:a>
+									</div>
+									
+									<div class="pull-right">
+										<x:a
+											href="j_spring_security_logout" style="color:green"
+											class="btn btn-flat">
+											Confirmar
+										</x:a>
+									</div>
+
+								</div>
+							</div>
+						</x:div>
+					</x:div>
+		<include id="inc_main"></include>
+
+	</window>
+</zk>

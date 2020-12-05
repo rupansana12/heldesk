@@ -1,0 +1,129 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+
+   </style>
+	<window id="win"
+		apply="uem.co.mz.helpdesk.controller.estatistica.EstatisticaController">
+		<custom-attributes composerName="vm" />
+		
+		
+		<div id="div_content_out">
+		
+		<div class="row">
+			
+				<label id="lbl_total_solicitacao" style="margin-right: 25px;margin-left: 10px;padding:65px;    background-color: #888888;"></label>
+				<label id="lbl_total_solicitacaoResolvida" style="margin-right: 25px;padding:65px;    background-color: #888888;"></label>
+				<label id="lbl_total_solicitacaoParcialmenteResolvida" style="margin-right: 25px;padding:65px;    background-color: #888888;"></label>
+				<label id="lbl_total_solicitacaoPendente" style="padding:65px;    background-color: #888888;"></label>
+		 </div>
+		
+		 	<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+		
+		</div>
+		
+		 <div zclass="box-footer">
+		        <div align="right">
+		        <button zclass="btn btn-success btn-sm" type="button"	id="btn_total_solicitacao">Total de solicitação </button>
+		        <button zclass="btn btn-success btn-sm" type="button"	id="btn_total_solicitacaoResolvida">Solicitação Resolvidas </button>
+		        <button zclass="btn btn-success btn-sm" type="button"	id="btn_total_solicitacaoParcialmenteResolvida">Solicitação Não Resolvidas </button>
+		        <button zclass="btn btn-success btn-sm" type="button"	id="btn_total_solicitacaoPendente">Solicitação Pendentes </button>
+				   <label width="5%"></label>
+				</div>
+		   </div>
+		   
+			<separator></separator>
+			<separator></separator>
+			
+		<div class="row">
+		<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div zclass="box box-default">
+		    <div zclass="box-header">
+		        <x:label class="box-title" style="font-family: ATimes New Roman; color: green; font-size: 14px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 26.3999996185303px; margin-top:-9px; margin-bottom:-9px">Lista de Solicitações</x:label>
+		    <div align="right">
+											<separator/>
+											<button
+												zclass="btn btn-warning btn-sm" type="button"
+												id="btn_imprimir" style="margin-right:1%"
+												iconSclass="fa fa-print">
+
+												Imprimir PDF
+											</button>
+										</div>
+		    </div>
+		    <div>
+		        <div zclass="box-body">
+					<listbox id="lbx_solicitacoesRegistadas" checkmark="true" rows="7">
+	                    <listhead>
+	                        <listheader label="#" width="5%"/>
+	                        <listheader label="Cliente" sort="auto(cliente.nome)" width="20%"/>
+	                        <listheader label="Tecnico" sort="auto(tecnico.nome)" width="20%"/>
+	                        <listheader label="Prioridade da Solicitação" sort="auto(prioridade.designacao)" width="15%" />                        
+	                        <listheader label="Data de Entrada" sort="auto(dataEntrada)" width="13%" />
+	                    	<listheader label="Equipamentos" sort="auto(estado)" width=""/>
+	                    	<listheader label="Estado" sort="auto(estado)" width="10%" />
+	                  </listhead>
+	                   <template name="model">
+	                    <listitem>
+	                         <listcell></listcell>
+	                         <listcell label="${each.cliente.nome}" />
+	                         <listcell >
+	                         		<zk forEach="${each.equipamentosSolicitados}">
+	                         			<label>${each.utilizador.username}</label><x:br></x:br>
+	                         		</zk>
+	                         </listcell>
+	                         <listcell label="${each.prioridade.designacao}" />
+	                         <listcell label="${each.dataRegisto}" />
+	                         <listcell >
+	                         		<zk forEach="${each.equipamentosSolicitados}">
+	                         			<label>+ ${each.equipamento} - ${each.referencia}</label><x:br></x:br>
+	                         		</zk>
+	                         </listcell>
+	                         
+	                         <listcell  label="${each.estado}">           
+	                         </listcell>
+	                         
+	                         </listitem>
+                       </template>
+                    </listbox>
+
+		        </div>
+		        <div zclass="box-footer">
+		        
+		        </div>
+		    </div>
+		</div>
+	</div>
+	
+</div>
+
+	</window>
+</zk>

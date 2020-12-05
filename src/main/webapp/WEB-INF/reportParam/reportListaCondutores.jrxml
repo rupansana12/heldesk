@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CicloLocal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4da41461-b689-4659-93ec-9064c8bf1433">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagemLogo" class="java.io.InputStream"/>
+	<parameter name="dataInicio" class="java.lang.String"/>
+	<parameter name="dataFim" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="apelido" class="java.lang.String"/>
+	<field name="tipoCarta.tipo" class="java.lang.String"/>
+	<field name="tipoCarta.categoria" class="java.lang.String"/>
+	<field name="categoriaMembro.designacao" class="java.lang.String"/>
+	<field name="validado" class="java.lang.Boolean"/>
+	<field name="distritoNascimento.designacao" class="java.lang.String"/>
+	<field name="distritoNascimento.provincia.designacao" class="java.lang.String"/>
+	<field name="condutorEmpresas" class="java.util.Collection"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="213" y="48" width="128" height="63" uuid="35819b40-9a46-4407-97c6-c336faec5cd6"/>
+				<imageExpression><![CDATA[$P{imagemLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="-1" y="111" width="556" height="15" uuid="5114dd8f-6b62-40db-8972-f7330f105f9c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOVECOA]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="129" width="554" height="11" uuid="05d12b59-be49-4f68-8666-f086a80d214d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataInicio}+" a "+$P{dataFim}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<rectangle>
+				<reportElement x="223" y="5" width="104" height="12" backcolor="#CCCCCC" uuid="585a4246-da1e-4b09-a701-d4ac026cd5de"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="5" width="87" height="12" backcolor="#CCCCCC" uuid="57703818-486d-4b63-a76e-508a0fffb050"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="5" width="183" height="12" backcolor="#CCCCCC" uuid="da604267-d83b-48cd-845f-1b8d5a1ba6cb"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="1" y="5" width="35" height="12" backcolor="#CCCCCC" uuid="da67abc4-c4a1-4d1f-a7c7-94e4afba51a6"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="39" y="5" width="183" height="12" uuid="e5a2f597-f0a1-40dc-bef6-a384ad77168b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome Completo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="5" width="87" height="12" uuid="02cbede8-c714-49df-bbb0-094df51ebb97"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Provincia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="5" width="35" height="12" uuid="a2132d61-db89-4fd1-a024-401b2e802d27"/>
+				<textElement>
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="2" width="555" height="1" uuid="ef78912e-9589-48ab-9a28-0228be92807c"/>
+				<graphicElement>
+					<pen lineColor="#CCCCCC"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="223" y="6" width="105" height="12" uuid="ae3b8921-30d6-45bd-834c-17421cbdf928"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="419" y="5" width="85" height="12" backcolor="#CCCCCC" uuid="c72cdc35-109c-460c-8a7a-0461cc2ed67f"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="419" y="6" width="65" height="12" uuid="2666eb23-66db-44b5-81ab-e9724923aca6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Carta]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="506" y="5" width="49" height="12" backcolor="#CCCCCC" uuid="a2f7a521-d08f-429c-9d90-032dd67110c6"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="504" y="5" width="51" height="12" uuid="5b3d0d0c-3938-4c2f-9729-fcdc65e5b2f1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Validado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="1" width="35" height="10" uuid="88699076-6eea-45a6-b97e-849bc4eec0d5"/>
+				<textElement>
+					<font fontName="Serif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="38" y="1" width="184" height="10" uuid="cc2299b0-fc95-4022-a80a-7e6a1534e74d"/>
+				<textElement>
+					<font fontName="Serif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}+" "+$F{apelido}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="419" y="1" width="85" height="10" uuid="865d9fab-08e5-4d72-b828-be290f5a6612">
+					<printWhenExpression><![CDATA[!($F{tipoCarta.tipo}==null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoCarta.tipo}+" "+$F{tipoCarta.categoria}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="330" y="1" width="88" height="10" uuid="b8db012f-880c-446f-aad2-800b586098af"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{distritoNascimento.provincia.designacao}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="223" y="1" width="105" height="10" uuid="ed3c1939-0914-411a-8584-1ec36aea5ec0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{condutorEmpresas}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="506" y="1" width="49" height="10" uuid="ba4c6703-6e24-4b5e-a768-0681a073dffe"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{validado}).equals(Boolean.TRUE)?"SIM":"NAO"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="11" width="554" height="1" forecolor="#CCCCCC" uuid="4f23a40b-7b29-4dfe-9fd7-ea31d7e0d9a1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#F1ECEC"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="12" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="10" y="4" width="532" height="1" forecolor="#CCCCCC" uuid="321afae2-a9d0-4487-bf3e-e1ec8b1e02a4"/>
+				<graphicElement>
+					<pen lineColor="#CCCCCC"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="417" y="7" width="136" height="8" forecolor="#333333" uuid="4eae3cda-9a19-4027-a5bc-0e0e1ea5872c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Processado por Computador]]></text>
+			</staticText>
+			<textField pattern="d/M/yyyy">
+				<reportElement x="438" y="15" width="115" height="8" forecolor="#333333" backcolor="#000000" uuid="ee79dcb9-fb03-4b7f-9f5d-5941100e59ff"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="15" width="238" height="8" forecolor="#333333" uuid="0ae7d7a9-55e1-40b5-9177-d9dea0a02673"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="7" width="238" height="8" forecolor="#333333" uuid="5a0f13ed-7eb4-4c27-b44e-b78771df186c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="15" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,562 @@
+/* Global Styles */
+
+body {
+    position: relative;
+    height: 100%!important;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    background: #ccc;
+    color: #4E5E6A;
+}
+
+html {
+    height: 100%!important;
+    position: relative;
+}
+
+a:hover,
+a:active,
+a:focus {
+    outline: none!important;
+}
+
+
+/* Typography */
+
+p {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 22px;
+    margin: 0px 0px 10px 0px;
+    font-style: normal;
+    white-space: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+h3,
+h4,
+h5 {
+    font-weight: 600;
+}
+
+
+.f-normal {
+    font-weight: normal;
+}
+
+
+
+
+/* CSS Utilities */
+/* Margins & Paddings */
+
+.no-s {
+    margin: 0px!important;
+    padding: 0px!important;
+}
+
+.no-m {
+    margin: 0;
+}
+
+.no-p {
+    padding: 0;
+}
+
+.m {
+    margin: 15px;
+}
+
+.m-t-xxs {
+    margin-top: 5px;
+}
+
+.m-r-xxs {
+    margin-right: 5px;
+}
+
+.m-b-xxs {
+    margin-bottom: 5px;
+}
+
+.m-l-xxs {
+    margin-left: 5px;
+}
+
+.m-t-xs {
+    margin-top: 10px;
+}
+
+.m-r-xs {
+    margin-right: 10px;
+}
+
+.m-b-xs {
+    margin-bottom: 10px;
+}
+
+.m-l-xs {
+    margin-left: 10px;
+}
+
+.m-t-sm {
+    margin-top: 15px;
+}
+
+.m-r-sm {
+    margin-right: 15px;
+}
+
+.m-b-sm {
+    margin-bottom: 15px;
+}
+
+.m-l-sm {
+    margin-left: 15px;
+}
+
+.m-t-md {
+    margin-top: 20px;
+}
+
+
+
+
+
+/* Buttons */
+
+.btn {
+    font-size: 13px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    outline: none!important;
+}
+
+.btn-addon i {
+    position: relative;
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin: -7px -13px;
+    margin-right: 12px;
+    line-height: 34px;
+    text-align: center;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: rgba(0,0,0, 0.1);
+}
+
+.btn-rounded.btn-addon i {
+    margin: -7px -16px;
+    margin-right: 15px;
+    border-radius: 50px;
+}
+
+.btn-rounded.btn-addon.btn-sm i {
+    margin: -7px -16px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+.btn-lg {
+    line-height: inherit;
+}
+
+.btn-lg.btn-addon i {
+    width: 45px;
+    height: 45px;
+    margin: -11px -17px;
+    margin-right: 16px;
+    line-height: 45px;
+}
+
+.btn-sm.btn-addon i {
+    width: 30px;
+    height: 30px;
+    margin: -6px -11px;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+.btn-xs.btn-addon i {
+    width: 22px;
+    height: 22px;
+    margin: -2px -6px;
+    margin-right: 5px;
+    line-height: 22px;
+    font-size: 10px;
+}
+
+.btn-default {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e5e5e5;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-group.open .btn-default.dropdown-toggle,
+.btn.btn-default.active {
+    background-color: #f1f1f1;
+    border: 1px solid #e5e5e5;
+}
+
+.btn-primary {
+    background-color: #7a6fbe;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-group.open .btn-primary.dropdown-toggle,
+.btn.btn-primary.active {
+    background-color: #6a5fac;
+    border: 1px solid transparent;
+}
+
+.btn-success {
+    background-color: #22BAA0;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-group.open .btn-success.dropdown-toggle,
+.btn.btn-success.active {
+    background-color: #1DB198;
+    border: 1px solid transparent;
+}
+
+.btn-danger {
+    background-color: #f25656;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-group.open .btn-danger.dropdown-toggle,
+.btn.btn-danger.active {
+    background-color: #e14444;
+    border: 1px solid transparent;
+}
+
+.btn-info {
+    background-color: #12AFCB;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-group.open .btn-info.dropdown-toggle,
+.btn.btn-info.active {
+    background-color: #08A7C3;
+    border: 1px solid transparent;
+}
+
+.btn-warning {
+    background-color: #f2ca4c;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-group.open .btn-warning.dropdown-toggle,
+.btn.btn-warning.active {
+    background-color: #e8bf40;
+    border: 1px solid transparent;
+}
+
+
+
+
+/* Labels */
+
+.label.label-default {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+}
+
+.label.label-success {
+    background: #22BAA0;
+}
+
+.label.label-primary {
+    background: #7a6fbe;
+}
+
+.label.label-info {
+    background: #12AFCB;
+}
+
+.label.label-danger {
+    background: #f25656;
+}
+
+.label.label-warning {
+    background: #f6d433;
+}
+
+
+/* Forms */
+
+label {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.controls label {
+    display: block;
+}
+
+.form-control {
+    background: #fff;
+    border-radius: 0;
+    border: 1px solid #dce1e4;
+    box-shadow: none!important;
+    font-size: 13px;
+    padding: 6px 10px!important;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+input[disabled] {
+    background: #f7f7f7;
+    border-color: #d2d7db;
+}
+
+.form-control:focus {
+    border: 1px solid #bdc5c9;
+    background: #fff;
+}
+
+.help-block {
+    margin-bottom: 5px;
+}
+
+.form-group.has-success .form-control,
+.form-group.has-warning .form-control,
+.form-group.has-error .form-control {
+    box-shadow: none;
+}
+
+.form-group.has-success .form-control:focus {
+    border: 1px solid #22BAA0;
+    background: #fff;
+}
+
+.form-group.has-warning .form-control:focus {
+    border: 1px solid #f6d433;
+    background: #fff;
+}
+
+.form-group.has-error .form-control:focus {
+    border: 1px solid #f25656;
+    background: #fff;
+}
+
+.form-group.has-success label {
+    color: #22BAA0;
+}
+
+.form-group.has-warning label {
+    color: #f6d433;
+}
+
+.form-group.has-error label {
+    color: #f25656;
+}
+
+label.error {
+    color: #a94442;
+    font-weight: bold;
+    margin-top: 5px;
+    float: left;
+    font-size: 12px;
+}
+
+input.form-control.input-rounded {
+    border-radius: 30px;
+}
+
+.input-group .btn {
+    padding: 7px 12px;
+}
+
+
+/* Center */
+
+.center {
+    margin: 0 auto;
+    float: none!important;
+    display: block;
+}
+
+
+/* Display */
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline-block;
+}
+
+
+
+
+
+/* Page Content */
+
+.page-content {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    background: #f7f8f8;
+    min-height: 100%;
+}
+
+.page-content.container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+
+
+
+/* Login */
+
+.page-login #main-wrapper,
+.page-register #main-wrapper,
+.page-forgot #main-wrapper,
+.page-lock-screen #main-wrapper {
+    margin: 4%;
+}
+
+.login-box {
+    margin: auto;
+    max-width: 400px;
+}
+
+.login-box .logo-name {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+.login-box .user-box {
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.login-box .user-box img {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.login-box .user-box form {
+    overflow: hidden;
+}
+
+
+
+
+/* Transitions */
+
+.top-menu .navbar-nav > li > a > .badge,
+.menu li a .arrow:before,
+.menu li.open > a > .arrow:before {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+
+/* Overflow */
+
+.navbar .logo-box,
+.navbar .logo-box a,
+.top-menu .navbar-nav > li > a > img,
+.info,
+.messages li a,
+.messages li a .msg-img,
+.messages li a .msg-text,
+.messages li a .msg-time,
+.tasks li a,
+.tasks li a .task-icon,
+.search-form,
+body:not(.small-sidebar):not(.page-horizontal-bar) .menu.accordion-menu,
+.page-inner,
+.small-sidebar .page-sidebar-fixed .page-inner,
+.page-breadcrumb,
+.page-breadcrumb .breadcrumb,
+.page-breadcrumb ul,
+.info-box,
+.text-box,
+.small-sidebar .accordion-menu li a,
+.page-footer,
+.color-switcher {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+

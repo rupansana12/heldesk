@@ -1,0 +1,33 @@
+.z-textbox, .z-decimalbox, .z-intbox, .z-longbox, .z-doublebox {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	color: #000;
+	min-height: 24px;
+	border: 1px solid #cfcfcf;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0;
+	padding: 4px 5px 3px;
+	line-height: 1.42857143;
+	background: #fff;
+}
+
+.loginTitle {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color: #4cae4c;
+}
+
+.loginWarning {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+body {
+	margin: 0;
+	padding: 0 0px;
+	overflow: hidden;
+}
+}

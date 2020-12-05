@@ -1,0 +1,217 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+   
+   
+   
+   </style>
+	<window id="win_pesquisar_condutor"
+		apply="uem.co.mz.movecoa.controller.validacao.PesquisarCondutorController">
+		<radiogroup id="rdgValidados"/>
+		
+		
+		<div id="div_content_out">
+
+		
+
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+			
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" style="">
+							Número da Carta ou Código do Condutor:
+						</x:label>
+						<textbox zclass="form-control" maxlength="12"
+							 id="tbx_nuit"  />
+					</div>
+
+
+				</div>
+				<div zclass="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+
+					<div class="form-group">
+						<x:label class="control-label" style="">
+							Nome ou Apelido:
+						</x:label>
+						<textbox zclass="form-control" id="tbx_nome"  />
+					</div>
+
+
+				</div>
+				
+				
+				
+				
+
+			</x:div>
+			
+			
+			
+			<div align="right">
+				
+				<x:label class="control-label" style="">
+						
+					</x:label>
+				
+					<button
+						 zclass="btn btn-warning btn-sm" id="btn_procurar"
+						type="button" iconSclass=" fa  fa-search">
+						Procurar
+					</button>
+					
+				</div>
+			
+
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div zclass="box-header">
+					<div class="row">
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:h3 class="box-title">
+							Lista de Membros
+						</x:h3>
+						</div>
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:label/>
+						<div align="right">
+							<radio label="Condutores Não Validados" id="rdoNaoValidados" value="Condutores Nao Validados" radiogroup="rdgValidados"  checked="true"/><separator orient="vertical" spacing="20px"/>
+							<radio label="Condutores Validados" id="rdoValidados" value="Condutores Validados" radiogroup="rdgValidados" visible="false"/> <separator orient="vertical" spacing="20px" visible="false"/>
+							<radio label="Todos Membros" id="rdoTodosMembros" value="Todos Membros" radiogroup="rdgValidados" visible="false"/> 
+						</div>
+						</div>
+					</div>
+						
+					</div>
+					<div>
+						<div zclass="box-body">
+							<listbox id="lbx_condutor" rows="10" mold="paging" pageSize="10">
+								<listhead>
+									
+									<listheader label="Código" sort="auto(codigo)"  align="center" width="8%" visible="false"/>
+									
+									<listheader label="Dados Pessoais [Nome do membro]" sort="auto(nome)" width="" align="left" />
+									
+									<listheader label="Número Carta" sort="auto(numeroCarta)"  align="center" width="11%"/>
+									
+									<listheader label="Data e Operador de Registado" sort="auto(created,userCreated.username)"  align="center" width="22%" id="lhr_userRegisto"/>
+									
+									<!-- <listheader label="Data de Registo" sort="auto(created)"  align="center" width="10%" id="lhr_dataRegisto" />
+									 -->
+									<listheader label="Data e Operador de Validacao" sort="auto(dataValidacao,userValidacao)"  align="center" width="22%" visible="false" id="lhr_userValidacao" />
+									
+									<!-- <listheader label="Data de Validação" sort="auto(dataValidacao)"  align="center" width="10%" visible="false" id="lhr_dataValidacao"/>
+									 -->
+									<listheader label="Situação" sort="auto(validado)"  align="center" width="10%"/>
+									
+									<listheader label="Validar"   align="center" width="8%"/>
+								</listhead>
+								<template name="model">
+									<listitem  >
+										<listcell
+											label="${each.codigo} ">
+										</listcell>
+										
+										<listcell
+											label="${each.nome} ${each.apelido}">
+										</listcell>
+										<listcell
+											label="${each.numeroCarta} ">
+										</listcell>
+										
+										<listcell
+											label="[ ${each.created} ] - ${each.userCreated.username} ">
+										</listcell>
+										<!-- <listcell
+											label="${each.created} ">
+										</listcell> -->
+										<listcell
+											label="[ ${each.dataValidacao} ] - ${each.userValidacao.username} ">
+										</listcell>
+										<!-- <listcell
+											label="${each.dataValidacao} ">
+										</listcell> -->
+										<listcell
+											label="${each.validado==true ? 'Validado': 'Nao Validado'} ">
+										</listcell>
+										<listcell>
+											<button visible="false"
+												zclass="btn btn-info btn-sm" iconSclass="fa  fa-eye"
+												width="45%"
+												forward="onClick=onVisualizarDadosPessoais(${each})">
+												
+											</button>
+											
+											<button
+												zclass="btn btn-warning btn-sm" iconSclass="fa  fa-edit"
+												width="45%"
+												forward="onClick=onEditarDadosPessoais(${each})">
+												
+											</button>
+											
+											
+										</listcell>
+									
+									</listitem>
+								</template>
+								<listfoot>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											
+											<listfooter align="right" span="3" style="color:white;">
+												<label
+													style="color:#EEEEEE; margin-right:5px;text-weight:800">
+													Total:
+												</label>
+											</listfooter>
+											<listfooter align="left">
+												<label
+													style="color:#EEEEEE; margin-right:5px"
+													id="lbl_total">
+
+												</label>
+											</listfooter>
+
+								</listfoot>
+							</listbox>
+
+						</div>
+						<div zclass="box-footer">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</window>
+</zk>

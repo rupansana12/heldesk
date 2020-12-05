@@ -1,0 +1,254 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+   <style>
+   
+   .ima{
+   	width: 20%;
+	height: 20%;
+   }
+  
+   .ima:hover{
+	
+	width: 300px;
+	height: 300px;
+	top:-2px;
+	border-bottom::0 2px 2px #666;
+	position:relative;
+
+    
+    }
+   
+   
+   
+   </style>
+	<window id="win_listagem_condutor"
+		apply="uem.co.mz.movecoa.controller.listagem.ListaCondutorController">		
+		
+		<div id="div_content_out">
+
+			<separator></separator>
+			<separator></separator>
+
+			<x:div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								
+				<x:div class="row">
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+				<div zclass="form-group">
+						<x:label style="">País :</x:label>
+						<combobox width="99%" id="cbx_pais"  readonly="true"  >
+							<template name="model">
+								<comboitem label="${each.designacao}" /> 
+							</template>
+						</combobox>
+				</div>
+			</div>
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+				<div zclass="form-group">			
+						<x:label>Província:</x:label>
+						<combobox width="100%"
+							id="cbx_provincia"  readonly="true" >
+							<template name="model">
+								<comboitem label="${each.designacao}" /> 
+							</template> 
+						</combobox>
+				</div>	
+			</div>	
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+				<div zclass="form-group">			
+						<x:label>Situação:</x:label>
+						<combobox width="100%" id="cbx_Situacao"  readonly="true" constraint="no empty: campo se selecao Obrigatorio">
+							<comboitem label="Todos Membros" value="Todos Membros"/>
+							<comboitem label="Validados" value="Validados" />
+							<comboitem label="Nao Validados" value="Nao Validados" />
+						</combobox>
+					
+				</div>	
+			</div>		
+			
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+				<div zclass="form-group">	
+						<x:label style="">Empresa :</x:label>
+						<combobox width="99%" id="cbx_empresa" readonly="true"  >
+							<template name="model">
+								<comboitem label="${each.nome}" /> 
+							</template>
+						</combobox>
+				</div>		
+			</div>	
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+					<div zclass="form-group">		
+						<x:label style=""> Tipo da Carta: </x:label>
+						<combobox width="100%" id="cbx_tipo_carta" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.tipo} - ${each.categoria}" /> 
+							</template> 
+						</combobox>
+					</div>
+			</div>	
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+					<div zclass="form-group">		
+						<x:label style=""> Categoria de Membro: </x:label>
+						<combobox width="100%" id="cbx_categoria_membro" readonly="true" >
+							<template name="model">
+								<comboitem label="${each.designacao}" /> 
+							</template> 
+						</combobox>
+					</div>
+			</div>		
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12" visible="false">
+					<div zclass="form-group">		
+						<x:label for="dtx_dataNascimento" class="control-label" style=""> Data Inicial </x:label>
+						<label style="color:red"> (dd/mm/aaaa) </label>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<datebox id="dtx_dataInicial" width="100%" readonly="false" visible="true"
+									buttonVisible="true" format="dd/MM/yyyy" />
+							</div>
+						</div>
+					</div>	
+			</div>	
+			
+			<div zclass="col-md-4 col-lg-4 col-sm-12 col-xs-12" visible="false">
+					<div zclass="form-group">		
+						<x:label for="dtx_dataNascimento" class="control-label" style=""> Data Final </x:label>
+						<label style="color:red"> (dd/mm/aaaa) </label>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<datebox id="dtx_dataFinal" width="100%" readonly="false" visible="true"
+									buttonVisible="true" format="dd/MM/yyyy" />
+							</div>
+
+						</div>
+					</div>	
+			</div>	
+			
+			
+
+			</x:div>
+			
+			
+			
+			<div align="right"> 
+				<x:label class="control-label" style=""> 
+					</x:label>  <button zclass="btn btn-warning btn-sm" id="btn_procurar"
+						type="button" iconSclass=" fa  fa-search"> Procurar </button>
+			</div>
+			
+			</div>
+			
+			</x:div>
+			
+
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div zclass="box-header">
+					<div class="row">
+						<div zclass="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<x:h3 class="box-title">
+							Lista de Membros
+						</x:h3>
+						</div>
+					</div>
+						
+					</div>
+					<div>
+						<div zclass="box-body">
+							<listbox id="lbx_condutor" rows="10" mold="paging" pageSize="10">
+								<listhead>
+									
+									<listheader label="Numero" sort="auto(codigo)"  align="center" width="8%"/>
+									<listheader label="Nome Completo" sort="auto(nome)" width="" align="left" />
+									<listheader label="Data Registo" sort="auto(created)"  align="center" width="10%"/>
+									<listheader label="Empresa" sort="auto(codigo)"  align="center" width="15%"/>
+									<listheader label="Povincia" sort="auto(codigo)"  align="center" width="12%"/>
+									<listheader label="tipo Carta" sort="auto(tipoCarta.tipo)"  align="center" width="15%"/>
+									<listheader label="Situação" sort="auto(validado)"  align="center" width="12%"/>
+								</listhead>
+								<template name="model">
+									<listitem  >
+										<listcell
+											label="${each.codigo} ">
+										</listcell>
+										<listcell
+											label="${each.nome} ${each.apelido}">
+										</listcell>
+										<listcell
+											label="${each.created} ">
+										</listcell>
+										<listcell label="${not empty each.condutorEmpresas ? '' :''}" >
+											<zk forEach="${each.condutorEmpresas}">
+												<label value="${each.empresa.nome}"/>
+											</zk>
+										</listcell>
+										<listcell
+											label="${each.distritoNascimento.provincia.designacao} ">
+										</listcell>
+										<listcell
+											label="${each.tipoCarta.tipo} ${each.tipoCarta.categoria} ">
+										</listcell>
+										<listcell
+											label="${each.validado==true ? 'Validado': 'Nao Validado'} ">
+										</listcell>
+									</listitem>
+								</template>
+								<listfoot>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											<listfooter style="color:white;"/>
+											
+											<listfooter align="right" span="3" style="color:white;">
+												<label
+													style="color:#EEEEEE; margin-right:5px;text-weight:800">
+													Total:
+												</label>
+											</listfooter>
+											<listfooter align="left">
+												<label
+													style="color:#EEEEEE; margin-right:5px"
+													id="lbl_total">
+
+												</label>
+											</listfooter>
+
+								</listfoot>
+							</listbox>
+
+						</div>
+						<div zclass="box-footer">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<div class="row">
+				<div zclass="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;margin-bottom:5px;">
+					<div zclass="box-footer" align="right">
+												<button zclass="btn btn-warning btn-sm" type="button"
+													id="btn_imprimir" iconSclass="fa fa-undo"
+													visible="true"> Imprimir PDF </button>
+												<label width="5%"></label>
+												<button zclass="btn btn-info btn-sm" type="button" visible="true"
+													id="btn_exportar" iconSclass="fa  fa-refresh"> Exportat para Excel </button>
+											</div>
+				
+				</div>
+			</div>	
+
+
+
+		</div>
+
+	</window>
+</zk>

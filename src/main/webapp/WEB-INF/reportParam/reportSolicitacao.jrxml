@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CicloLocal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4da41461-b689-4659-93ec-9064c8bf1433">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="29"/>
+	<parameter name="imagemLogo" class="java.io.InputStream"/>
+	<parameter name="dataInicio" class="java.lang.String"/>
+	<parameter name="dataFim" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<field name="cliente.nome" class="java.lang.String"/>
+	<field name="prioridade.designacao" class="java.lang.String"/>
+	<field name="dataRegisto" class="java.util.Date"/>
+	<field name="estado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="213" y="48" width="128" height="63" uuid="35819b40-9a46-4407-97c6-c336faec5cd6"/>
+				<imageExpression><![CDATA[$P{imagemLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<rectangle>
+				<reportElement x="223" y="5" width="104" height="12" backcolor="#CCCCCC" uuid="585a4246-da1e-4b09-a701-d4ac026cd5de"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="5" width="150" height="12" backcolor="#CCCCCC" uuid="57703818-486d-4b63-a76e-508a0fffb050"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="10" y="5" width="211" height="12" backcolor="#CCCCCC" uuid="da604267-d83b-48cd-845f-1b8d5a1ba6cb"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="5" width="212" height="12" uuid="e5a2f597-f0a1-40dc-bef6-a384ad77168b"/>
+				<textElement>
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome Completo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="5" width="150" height="12" uuid="02cbede8-c714-49df-bbb0-094df51ebb97"/>
+				<textElement>
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Registo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="2" width="555" height="1" uuid="ef78912e-9589-48ab-9a28-0228be92807c"/>
+				<graphicElement>
+					<pen lineColor="#CCCCCC"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="223" y="6" width="105" height="12" uuid="ae3b8921-30d6-45bd-834c-17421cbdf928"/>
+				<textElement>
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prioridade]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="483" y="5" width="72" height="12" backcolor="#CCCCCC" uuid="a2f7a521-d08f-429c-9d90-032dd67110c6"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="483" y="5" width="70" height="12" uuid="5b3d0d0c-3938-4c2f-9729-fcdc65e5b2f1"/>
+				<textElement>
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="11" width="554" height="1" forecolor="#CCCCCC" uuid="4f23a40b-7b29-4dfe-9fd7-ea31d7e0d9a1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#F1ECEC"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="10" y="0" width="211" height="11" uuid="910162fd-5988-4cdf-84e7-d67f7888f09d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="108" height="12" uuid="ad499db5-9dea-4858-830a-2bc2b2bc18c1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prioridade.designacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="0" width="145" height="12" uuid="4540b11c-db74-40e3-92e0-30021c7062f2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataRegisto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="1" width="70" height="11" uuid="b2477938-6b06-45f8-bb3d-2303154e7e92"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="12" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="10" y="4" width="532" height="1" forecolor="#CCCCCC" uuid="321afae2-a9d0-4487-bf3e-e1ec8b1e02a4"/>
+				<graphicElement>
+					<pen lineColor="#CCCCCC"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="417" y="7" width="136" height="8" forecolor="#333333" uuid="4eae3cda-9a19-4027-a5bc-0e0e1ea5872c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Processado por Computador]]></text>
+			</staticText>
+			<textField pattern="d/M/yyyy">
+				<reportElement x="438" y="15" width="115" height="8" forecolor="#333333" backcolor="#000000" uuid="ee79dcb9-fb03-4b7f-9f5d-5941100e59ff"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="15" width="238" height="8" forecolor="#333333" uuid="0ae7d7a9-55e1-40b5-9177-d9dea0a02673"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="7" width="238" height="8" forecolor="#333333" uuid="5a0f13ed-7eb4-4c27-b44e-b78771df186c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="15" splitType="Stretch"/>
+	</summary>
+</jasperReport>
